@@ -1,0 +1,36 @@
+{
+  "name": "project-2",
+  "version": "1.0.0",
+  "description": "Second Coding BootCamp Project",
+  "main": "server.js",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-session-sequelize": "^7.1.2",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.4",
+    "express-session": "^1.17.2",
+    "mysql2": "^2.3.2",
+    "path": "^0.12.7",
+    "sequelize": "^6.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/austinxewell/project-2.git"
+  },
+  "keywords": [
+    "project",
+    "2"
+  ],
+  "author": "austinxewell",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/austinxewell/project-2/issues"
+  },
+  "homepage": "https://github.com/austinxewell/project-2#readme"
+}
