@@ -18,13 +18,7 @@
             <div class="navbar-item">
             <div class="buttons">
                 <a id="sign-up" class="button is-info">
-                <strong>Sign up / Sign in</strong>
-                </a>
-                <a class="button is-light">
-                Dashboard
-                </a>
-                <a class="button is-light">
-                New Listing
+                <strong>Home</strong>
                 </a>
             </div>
             </div>
@@ -32,43 +26,52 @@
         </div>
     </nav>
 
-    <!-- Body -->
-        <!-- First Item -->
-    <div class="columns">
-        <div class="column is-full border mb-2">
-            <div class="columns">
-                <img class="column is-2 ml-3 borderRight" src="../public/images/img placeholder.png" alt="Item Image" style="width: 200px; height: 200px;">
-                <div id="" class="column is-2 borderRight">
-                    <p>Title: </p>
-                    <p>Price: </p>
-                    <p>Shipping: </p>
-                </div>
-                <div class="column is-6 borderRight">
-                    <p>Description:</p>
-                </div>
-                <div class="column is-2">
-                    <a id="" class="button is-info">
-                        <strong>Purchase</strong>
-                    </a>
-                    <a id="" class="button is-info">
-                        <strong>Reviews</strong>
-                    </a>
-                </div>
-            </div>
+    <!-- Body/Login -->
+    <form class="login-form">
+        <div>
+            <label for="email-login">email:</label>
+            <input type="text" id="email-login" />
         </div>
-    </div>
+        <div>
+            <label for="password-login">password:</label>
+            <input type="password" id="password-login" />
+        </div>
 
-        <!-- Second Item -->
-
+        <div class="buttons">
+            <a id="sign-up" class="button is-info">
+            Login
+            </a>
+        </div>
+    </form>
+    
+    <form class="signup-form">
+        <div>
+            <label for="username-signup">username:</label>
+            <input type="text" id="username-signup" />
+        </div>
+        <div>
+            <label for="email-signup">email:</label>
+            <input type="text" id="email-signup" />
+        </div>
+         <div>
+            <label for="password-signup">password:</label>
+            <input type="password" id="password-signup" />
+        </div>
+        <div class="buttons">
+            <a id="sign-up" class="button is-info">
+            Sign Up
+            </a>
+        </div>
+    </form>
 
 
     <!-- Footer -->
     <footer class="footer has-background-light">
         <div class="content has-text-centered">
-          <p>
+            <p>
             Thanks for visiting <strong>Full Stack Marketplace</strong> by <a href="https://github.com/austinxewell/project-2">Group 8</a>.
-          </p>
+            </p>
         </div>
-      </footer>
+    </footer>
 </body>
 </html>

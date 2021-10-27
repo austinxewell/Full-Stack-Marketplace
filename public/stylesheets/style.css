@@ -5,3 +5,7 @@
 .borderRight {
   border-right: solid;
 }
+
+.login-form, .signup-form {
+  margin: 10px;
+}
