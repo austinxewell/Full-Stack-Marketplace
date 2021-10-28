@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="../public/stylesheets/style.css">
 </head>
-<body>
+<body class="has-background-info">
     <!--Header/Navbar-->
     <nav class="navbar has-background-light mb-5" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
@@ -16,17 +16,18 @@
         </div>    
         <div class="navbar-end">
             <div class="navbar-item">
-            <div class="buttons">
-                <a id="sign-up" class="button is-info">
-                <strong>Sign up / Sign in</strong>
-                </a>
-                <a class="button is-light">
-                Dashboard
-                </a>
-                <a class="button is-light">
-                New Listing
-                </a>
-            </div>
+                <div class="buttons">
+                    <a id="sign-up" class="button is-info">
+                        <strong>Sign up / Sign in</strong>
+                    </a>
+                <!-- when logged in you will be able to view below buttons -->
+                    <a class="button is-light">
+                        Dashboard
+                    </a>
+                    <a class="button is-light">
+                        New Listing
+                    </a>
+                </div>
             </div>
         </div>
         </div>
@@ -35,16 +36,17 @@
     <!-- Body -->
         <!-- First Item -->
     <div class="columns">
-        <div class="column is-full border mb-2">
+        <div class="column is-full border mb-2 has-background-light">
             <div class="columns">
                 <img class="column is-2 ml-3 borderRight" src="../public/images/img placeholder.png" alt="Item Image" style="width: 200px; height: 200px;">
                 <div id="" class="column is-2 borderRight">
-                    <p>Title: </p>
-                    <p>Price: </p>
-                    <p>Shipping: </p>
+                    <p><strong>Title:</strong> "title of item"</p>
+                    <p><strong>Price:</strong> "price of item"</p>
+                    <p><strong>Shipping:</strong> "Yes/No"</p>
                 </div>
                 <div class="column is-6 borderRight">
-                    <p>Description:</p>
+                    <p><strong>Description:</strong></p>
+                    <p>this will be the description of your product</p>
                 </div>
                 <div class="column is-2">
                     <a id="" class="button is-info">
@@ -60,16 +62,17 @@
 
         <!-- Second Item -->
         <div class="columns">
-            <div class="column is-full border mb-2">
+            <div class="column is-full border mb-2 has-background-light">
                 <div class="columns">
                     <img class="column is-2 ml-3 borderRight" src="../public/images/img placeholder.png" alt="Item Image" style="width: 200px; height: 200px;">
                     <div id="" class="column is-2 borderRight">
-                        <p>Title: </p>
-                        <p>Price: </p>
-                        <p>Shipping: </p>
+                        <p><strong>Title:</strong> "title of item"</p>
+                        <p><strong>Price:</strong> "price of item"</p>
+                        <p><strong>Shipping:</strong> "Yes/No"</p>
                     </div>
                     <div class="column is-6 borderRight">
-                        <p>Description:</p>
+                        <p><strong>Description:</strong></p>
+                        <p>this will be the description of your product</p>
                     </div>
                     <div class="column is-2">
                         <a id="" class="button is-info">
