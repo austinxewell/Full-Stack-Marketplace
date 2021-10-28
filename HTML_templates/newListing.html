@@ -23,9 +23,6 @@
                 <a class="button is-light">
                 Dashboard
                 </a>
-                <a class="button is-light">
-                    New Listing
-                </a>
                 <a id="sign-up" class="button is-info">
                     <strong>Logout</strong>
                 </a>
@@ -35,39 +32,37 @@
         </div>
     </nav>
 
-    <!-- Body -->
-    <!-- Buyers Username text -->
+    <!-- Add Img section -->
+<div class="column is-full border mb-2  has-background-light">
     <div class="columns">
-        <div class="column is-10">
-            <p class="is-size-2 ml-3 has-text-white">"Buyer's Username":</p>
-        </div>
-    </div>
-
-        <!-- Buyers review post 1 -->
-    <div class="columns">
-        <div class="column is-full border mb-2 has-background-light">
-            <div class="columns">
-                <div id="" class="column is-12 ml-6">
-                    <p><strong>Comments for Buyer:</strong></p>
-                    <p>fill with some sort of info about buyer</p>
-                    <p><strong>-"user name of who left review"</strong></p>
-                </div>
+        <div class="column is-2 borderRight">
+            <!-- Img uploading tech should replace img placeholder -->
+            <img class="column is-2 ml-3" src="../public/images/img placeholder.png" alt="Item Image" style="width: 200px; height: 200px;">
+            <!-- If this button is needed -->
+            <div class="buttons ml-5">
+                <a id="" class="button is-info">
+                <strong>Upload Image</strong>
+                </a>
             </div>
         </div>
-    </div>
-
-        <!-- Buyers review post 1 -->
-    <div class="columns">
-        <div class="column is-full border mb-2 has-background-light">
-            <div class="columns">
-                <div id="" class="column is-12 ml-6">
-                    <p><strong>Comments for Buyer:</strong></p>
-                    <p>fill with some sort of info about buyer</p>
-                    <p><strong>-"user name of who left review"</strong></p>
-                </div>
-            </div>
+        <!-- Text areas for title, price, and shipping -->
+        <div id="" class="column is-2 borderRight">
+            <textarea class="textAreaInfo" placeholder=" Title of Item:" ></textarea>
+            <textarea class="textAreaInfo" placeholder=" Price of Item:" ></textarea>
+            <textarea class="textAreaInfo" placeholder=" Shipping Info:" ></textarea>
         </div>
+            <!-- Text area for description -->
+            <textarea class="column is-auto" placeholder=" Description of Item:" ></textarea>
     </div>
+</div>
+<!-- Submit button -->
+<div class="column">
+    <div class="buttons column is-2">
+        <a id="" class="button is-$white has-text-info ml-5">
+        <strong>Submit</strong>
+        </a>
+    </div>
+</div>
 
     <!-- Footer -->
     <footer class="footer has-background-light">

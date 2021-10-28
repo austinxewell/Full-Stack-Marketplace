@@ -9,3 +9,18 @@
 .login-form, .signup-form {
   margin: 10px;
 }
+
+.textAreaInfo {
+  width: 175px;
+  border: solid;
+  border-width: 2px;
+  border-color: #227dd2;
+  resize: none;
+}
+
+.textAreaLogin {
+  border: solid;
+  border-width: 2px;
+  border-color: #227dd2;
+  resize: none;
+}
