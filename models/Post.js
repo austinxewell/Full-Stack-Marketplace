@@ -2,30 +2,31 @@ const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
 // create our Post model
-class NewListing extends Model {}
+class Post extends Model {}
 
-NewListing.init(
+Post.init(
   {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
+      autoIncrement: true
     },
     title: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     price: {
-      type: DataTypes.DECIMAL (10,2),
-      allowNull: false,
-      validate: {
-        isDecimal: true
-      }
-
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    info: {
+      type: DataTypes.STRING,
+      allowNull: true
     },
     shipping: {
-      type: DataTypes.STRING,
+      type: DataTypes.BOOLEAN,
+      allowNull: false
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -39,8 +40,8 @@ NewListing.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: "NewListing",
+    modelName: "post",
   }
 );
 
-module.exports = NewListing;
+module.exports = Post;
