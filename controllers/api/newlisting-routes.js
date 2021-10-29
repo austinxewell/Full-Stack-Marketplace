@@ -1,13 +1,13 @@
 const router = require("express").Router();
 const sequelize = require("../../config/connection");
-const { Post, User } = require("../../models");
+const { NewListing, User } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 // get all
 router.get("/", (req, res) => {
   console.log("=========================");
-  Post.findAll({
-    attributes: ["id", "post_url", "title", "created_at"],
+  NewListing.findAll({
+    attributes: ["id", "newlisting_url", "title", "created_at"],
     order: [["created_at", "DESC"]],
     include: [
       {
