@@ -1,7 +1,36 @@
+
+    <!--Header/Navbar-->
+    <nav class="navbar has-background-light mb-5" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <img src="/images/marketplace placeholder.png" alt="Full Stack Marketplace Logo" style="width: 300px; height: 100px;">            
+        </div>    
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons">
+                    <!-- Dashboard and New Listing will only be visiable when logged in -->
+                    {{#if loggedIn}}
+                    <a class="button is-light">
+                        Dashboard
+                    </a>
+                    <a class="button is-light">
+                        New Listing
+                    </a>
+                    {{/if}}
+                    <!-- always visable -->
+                    <a id="sign-up" class="button is-info">
+                        <strong>Sign up / Sign in</strong>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </nav>
+
 <ol class='post-list'>
     {{#each posts as |post|}}
     <li>
         {{> post-info post }}
     </li>
+    <br>
     {{/each}}
 </ol>
