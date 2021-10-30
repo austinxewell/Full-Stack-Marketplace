@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-// create our Post model
+// create our Buyer model
 class Buyer extends Model {}
 
 Buyer.init(
@@ -13,6 +13,7 @@ Buyer.init(
         },
         user_id: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             references: {
                 model: 'user',
                 key: 'id',
@@ -20,11 +21,28 @@ Buyer.init(
         },
         post_id: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             references: {
                 model: 'post',
                 key: 'id',
             },
         },
+        seller_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'seller',
+                key: 'id',
+            },
+        },
     },
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'buyer'
+    }
+);
 
-)
+module.exports = Buyer;

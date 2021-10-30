@@ -1,6 +1,9 @@
 // import all models
 const Post = require('./Post');
 const User = require('./User');
+const Buyer = require('./Buyer');
+const Seller = require('./Seller');
+const Review = require('./Review');
 
 
 // create associations
@@ -14,4 +17,4 @@ Post.belongsTo(User, {
 
 
 
-module.exports = { User, Post };
+module.exports = { User, Post, Buyer, Seller, Review };
