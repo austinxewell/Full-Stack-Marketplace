@@ -1,14 +1,24 @@
-<article class="post">
-    <div class="title">
-        <a href="{{post-title}}" target="_blank">{{title}}</a>
+    <div class="columns">
+        <div class="column is-full border mb-2 has-background-light">
+            <div class="columns">
+                <img class="column is-2 ml-3 borderRight" src="/images/img placeholder.png" alt="Item Image" style="width: 200px; height: 200px;">
+                <div id="" class="column is-2 borderRight">
+                    <p><strong>Title:</strong> {{title}} </p>
+                    <p><strong>Price:</strong> {{price}}</p>
+                    <p><strong>Shipping:</strong> {{shipping}}</p>
+                </div>
+                <div class="column is-6 borderRight">
+                    <p><strong>Description:</strong></p>
+                    <p>{{info}}</p>
+                </div>
+                <div class="column is-2">
+                    <a id="" class="button is-info mb-3">
+                        <strong>Purchase</strong>
+                    </a>
+                    <a id="" class="button is-info">
+                        <strong>Reviews</strong>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="price">
-        <a href="{{post-price}}" target="_blank">{{price}}</a>
-    </div>
-    <div class="info">
-        <a href="{{post-info}}" target="_blank">{{info}}</a>
-    </div>
-    <div class="shipping">
-        <a href="{{post-shipping}}" target="_blank">{{shipping}}</a>
-    </div>
-</article>
