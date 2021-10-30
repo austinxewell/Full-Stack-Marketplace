@@ -18,8 +18,7 @@ router.get("/", (req, res) => {
         attributes: ["username"],
       },
     ],
-  })
-    .then((dbPostData) => {
+  }).then((dbPostData) => {
       // serialize data before passing to template
       const posts = dbPostData.map((post) => post.get({ plain: true }));
       res.render("dashboard", { posts, loggedIn: true });

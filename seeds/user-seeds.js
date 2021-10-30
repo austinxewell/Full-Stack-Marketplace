@@ -46,6 +46,11 @@ const userData = [
         email: 'test2@gmail.com',
         password: 'password1234',
     },
+    {
+        username: 'test3',
+        email: 'test3@gmail.com',
+        password: 'password1234',
+    },
     
 ];
 
