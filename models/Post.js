@@ -10,18 +10,23 @@ Post.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
+      autoIncrement: true
     },
     title: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
-    post_url: {
+    price: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    info: {
       type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        isURL: true,
-      },
+      allowNull: true
+    },
+    shipping: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
     },
     user_id: {
       type: DataTypes.INTEGER,

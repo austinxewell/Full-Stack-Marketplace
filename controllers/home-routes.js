@@ -6,7 +6,7 @@ const { User, Post } = require("../models");
 router.get("/", (req, res) => {
   console.log(req.session);
   Post.findAll({
-    attributes: ["id", "post_url", "title", "created_at"],
+    attributes: ["id", "title", "price", "info", "shipping"],
     include: [
       {
         model: User,
@@ -43,7 +43,7 @@ router.get("/post/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ["id", "post_url", "title", "created_at"],
+    attributes: ["title", "price", "info", "shipping"],
     include: [
       {
         model: User,
@@ -53,7 +53,7 @@ router.get("/post/:id", (req, res) => {
   })
     .then((dbPostData) => {
       if (!dbPostData) {
-        res.status(404).json({ message: "No post found with this id" });
+        res.status(404).json({ message: "No Listing found with this id" });
         return;
       }
 

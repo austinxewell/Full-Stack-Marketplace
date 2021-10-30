@@ -1,8 +1,8 @@
     <!-- Body -->
-    <!-- Purchased Items text and Add Money Button -->
+    <!-- Purchased Listings text and Add Money Button -->
     <div class="columns">
         <div class="column is-10">
-            <p class="is-size-2 ml-3 has-text-white">Purchased Items:</p>
+            <p class="is-size-2 ml-3 has-text-white">Purchased Listings:</p>
         </div>
         <div class="column is-2">
             <div class="buttons">
@@ -13,41 +13,53 @@
         </div>
     </div>
 
-
-
-
-
-
-
-{{!-- start of template code --}}
-{{!-- <section>
-    <h2>Create New Post</h2>
+    <h2>Create New Listing</h2>
 
     <form class="new-post-form">
         <div>
-            <label for="post-title">Title</label>
+            <label for="post-title">Listing Title</label>
             <input type="text" id="post-title" name="post-title" />
         </div>
         <div>
-            <label for="post-url">Link</label>
-            <input id="post-url" name="post-url" />
+            <label for="post-price">Listing Price</label>
+            <input type="number" id="post-price" name="post-price" />
+        </div>
+        <div>
+            <label for="post-info">Listing Information</label>
+            <input type="text" id="post-info" name="post-info" />
+        </div>
+        <div>
+            <label for="">Listing shipping</label>
+            <input type="checkbox" id="post-shipping" name="post-shipping" />
         </div>
         <button type="submit" class="btn">Create</button>
     </form>
 </section>
 {{#if posts.length}}
 <section>
-    <h2>Your Posts</h2>
+    <h2>Your Listing</h2>
     <ol>
         {{#each posts as |post|}}
         <li>
+            {{> post-title post}}
+            <a href="/dashboard/edit/{{post.id}}" class="edit-title">Edit Listing Title</a>
+        </li>
+        <li>
+            {{> post-price post}}
+            <a href="/dashboard/edit/{{post.id}}" class="edit-price">Edit Listing Price</a>
+        </li>
+        <li>
             {{> post-info post}}
-            <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+            <a href="/dashboard/edit/{{post.id}}" class="edit-info">Edit Listing Information</a>
+        </li>
+        <li>
+            {{> post-shipping post}}
+            <a href="/dashboard/edit/{{post.id}}" class="edit-shipping">Edit Listing Shipping</a>
         </li>
         {{/each}}
     </ol>
 </section>
 {{/if}}
 
-<script src="/public/javascript/add-post.js"></script> --}}
+<script src="/public/javascript/add-post.js"></script> 
 {{!-- end of template code --}}
