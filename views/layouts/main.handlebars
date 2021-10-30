@@ -17,8 +17,8 @@
         </div>    
         <div class="navbar-end">
             <div class="navbar-item">
-                {{#if loggedIn}}
                 <!-- Dashboard and New Listing will only be visiable when logged in -->
+                {{#if loggedIn}}
                 <div class="buttons">
                     <a class="button is-light">
                         Dashboard
@@ -42,39 +42,20 @@
       {{{ body }}}
     </main>
 
-
-  {{!-- template code. not needed for project --}}
-    {{!-- <div class="wrapper">
-      <header>
-        <h1>
-          <a href="/">Project 2</a>
-        </h1>
-        <nav>
-          {{#if loggedIn}}
-          <a href="/dashboard">dashboard</a>
-          <button id="logout" class="btn-no-style"></button>
-          {{else}}
-          <a href="/login">login</a>
-          {{/if}}
-        </nav>
-      </header>
-      <main>
-        {{{ body }}}
-      </main> 
-  {{!-- end of template code --}}
-
-
     <!-- Footer -->
-  <footer class="footer has-background-light">
-      <div class="content has-text-centered">
-        <p>
-          Thanks for visiting <strong>Full Stack Marketplace</strong> by <a href="https://github.com/austinxewell/project-2">Group 8</a>.
-        </p>
-      </div>
-  </footer>
+    <footer class="footer has-background-light">
+        <div class="content has-text-centered">
+          <p>
+            Thanks for visiting <strong>Full Stack Marketplace</strong> by <a href="https://github.com/austinxewell/project-2">Group 8</a>.
+          </p>
+        </div>
+      </footer>
+
+
+ 
 
     {{!-- not sure of this until route is created. --}}
-    {{!-- {{#if loggedIn}}
+    {{!-- {{#if loggedIn --!}}
     <script src="/public/javascript/logout.js"></script>
     {{/if}}
   </body>
