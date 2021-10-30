@@ -7,7 +7,10 @@ async function editFormHandler(event) {
     const response = await fetch(`/api/posts/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
-            title
+            title,
+            price,
+            info,
+            shipping
         }),
         headers: {
             'Content-Type': 'application/json'
@@ -19,6 +22,7 @@ async function editFormHandler(event) {
     } else {
         alert(response.statusText);
     }
-}
-
-document.querySelector('.edit-post-form').addEventListener('submit', editFormHandler);
+  
+  }
+  
+  document.querySelector('.edit-post-form').addEventListener('submit', editFormHandler);
