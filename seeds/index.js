@@ -6,8 +6,12 @@ const sequelize = require('../config/connection');
 const seedAll = async () => {
     await sequelize.sync({ force: true });
     console.log('\n------- DATABASE SYNCED -------\n');
+    try {
     await seedUsers();
     console.log('\n------- USERS SEEDED ----------\n');
+    } catch(err) {
+        console.log(err);
+    };
     await seedPosts();
     console.log('\n---------POSTS SEEDED-----------\n');
 
