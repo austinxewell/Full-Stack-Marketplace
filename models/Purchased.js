@@ -1,42 +1,43 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Review extends Model {}
-    
-Review.init(
+class Purchased extends Model {}
+
+Purchased.init(
     {
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
-            autoIncrement: true,
+            autoIncrement: true
         },
-        buyer_review: {
-            type: DataTypes.STRING, 
+        buyers_username: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        post_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'post',
+                key: 'id'
+            }
         },
         seller_username: {
             type: DataTypes.STRING,
             allowNull: false,
             references: {
                 model: 'post',
-                key: 'id'
+                key: 'id' 
             },
-        },
-        buyer_username: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            references: {
-                model: 'purchase',
-                key: 'id'
-            }
-        }
+        }, 
     },
     {
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'review'
+        modelName: 'Purchased',
     }
-)
+);
 
-module.exports = Review;
+module.exports = Purchased;

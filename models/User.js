@@ -50,6 +50,15 @@ User.init(
                 len: [4]
             }
         },
+        // TODO: need to make it so the end user can enter money and use it to purchase Listings
+        money: {
+            type: DataTypes.NUMBER,
+            allowNull: true,
+            validate: {
+                isNumber: true
+            }
+
+        },
     },
     {
         hooks: {
