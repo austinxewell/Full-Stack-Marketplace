@@ -9,15 +9,15 @@
                 <div class="buttons">
                     <!-- Dashboard and New Listing will only be visiable when logged in -->
                     {{#if loggedIn}}
-                    <a class="button is-light">
+                    <a href="/dashboard" class="button is-light">
                         Dashboard
                     </a>
-                    <a class="button is-light">
+                    <a href="/newListin" class="button is-light">
                         New Listing
                     </a>
                     {{/if}}
                     <!-- always visable -->
-                    <a id="sign-up" class="button is-info">
+                    <a href="/login" id="sign-up" class="button is-info">
                         <strong>Sign up / Sign in</strong>
                     </a>
                 </div>
