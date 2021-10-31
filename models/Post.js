@@ -28,6 +28,17 @@ Post.init(
       type: DataTypes.BOOLEAN,
       allowNull: false
     },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    picture_url: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isURL: true
+      }
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
