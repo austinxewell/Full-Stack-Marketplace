@@ -20,13 +20,17 @@ Post.init(
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    info: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
     shipping: {
       type: DataTypes.BOOLEAN,
       allowNull: false
+    },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    picture_url: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     user_id: {
       type: DataTypes.INTEGER,
