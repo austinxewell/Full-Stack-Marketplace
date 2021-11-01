@@ -50,25 +50,6 @@ async function signupFormHandler(event) {
     }
 }
 
-async function home() {
-    const response = await fetch(`/login`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' }
-    });
+document.querySelector('#login-form').addEventListener('submit', loginFormHandler);
 
-    if (response.ok) {
-        document.location.replace('/');
-    } else {
-        alert(response.statusText);
-    }
-}
-
-document
-    .querySelector('.login-form')
-    .addEventListener('submit', loginFormHandler);
-document
-    .querySelector('.signup-form')
-    .addEventListener('submit', signupFormHandler);
-document
-    .querySelector('.button-home')
-    .addEventListener('click', home);
+document.querySelector('#signup-form').addEventListener('submit', signupFormHandler);
