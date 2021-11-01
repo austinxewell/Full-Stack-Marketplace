@@ -9,8 +9,9 @@ async function editFormHandler(event) {
         body: JSON.stringify({
             title,
             price,
-            info,
-            shipping
+            shipping,
+            description,
+            picture_url,
         }),
         headers: {
             'Content-Type': 'application/json'
