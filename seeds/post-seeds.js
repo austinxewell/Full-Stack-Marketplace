@@ -6,6 +6,8 @@ const postData = [
         price: 10,
         info: 'this is some info about the product being sold or purchased',
         shipping: true,
+        description: 'this is a string',
+        picture_url: 'http://apicture.com',
         user_id: 1,
     },
     {
@@ -13,6 +15,8 @@ const postData = [
         price: 20,
         info: 'this is some info about the product being sold or purchased',
         shipping: false,
+        description: 'this is a string',
+        picture_url: 'http://apicture.com',
         user_id: 2,
     },
     {
@@ -20,6 +24,8 @@ const postData = [
         price: 30,
         info: 'this is some info about the product being sold or purchased',
         shipping: true,
+        description: 'this is a string',
+        picture_url: 'http://apicture.com',
         user_id: 3,
     },
     {
@@ -27,6 +33,8 @@ const postData = [
         price: 40,
         info: 'this is some info about the product being sold or purchased',
         shipping: false,
+        description: 'this is a string',
+        picture_url: 'http://apicture.com',
         user_id: 4,
     },
     {
@@ -34,6 +42,8 @@ const postData = [
         price: 50,
         info: 'this is some info about the product being sold or purchased',
         shipping: true,
+        description: 'this is a string',
+        picture_url: 'http://apicture.com',
         user_id: 5,
     },
     {
@@ -41,6 +51,8 @@ const postData = [
         price: 60,
         info: 'this is some info about the product being sold or purchased',
         shipping: true,
+        description: 'this is a string',
+        picture_url: 'http://apicture.com',
         user_id: 6,
     },
     {
@@ -48,6 +60,8 @@ const postData = [
         price: 70,
         info: 'this is some info about the product being sold or purchased',
         shipping: true,
+        description: 'this is a string',
+        picture_url: 'http://apicture.com',
         user_id: 7,
     },
     {
@@ -55,6 +69,8 @@ const postData = [
         price: 80,
         info: 'this is some info about the product being sold or purchased',
         shipping: false,
+        description: 'this is a string',
+        picture_url: 'http://apicture.com',
         user_id: 8,
     },
     {
@@ -62,6 +78,8 @@ const postData = [
         price: 90,
         info: 'this is some info about the product being sold or purchased',
         shipping: true,
+        description: 'this is a string',
+        picture_url: 'http://apicture.com',
         user_id: 9,
     },
     {
@@ -69,6 +87,8 @@ const postData = [
         price: 100,
         info: 'this is some info about the product being sold or purchased',
         shipping: true,
+        description: 'this is a string',
+        picture_url: 'http://apicture.com',
         user_id: 10,
     },
 ]

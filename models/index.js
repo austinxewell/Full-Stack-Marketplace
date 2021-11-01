@@ -1,9 +1,9 @@
 // import all models
 const Post = require('./Post');
 const User = require('./User');
-const Purchased = require('./Purchased');
-const Review = require('./Review');
-const MyListing = require('./MyListing');
+// const Purchased = require('./Purchased');
+// const Review = require('./Review');
+// const MyListing = require('./MyListing');
 
 // create associations
 User.hasMany(Post, {
@@ -15,4 +15,4 @@ Post.belongsTo(User, {
 });
 
 
-module.exports = { User, Post, Purchased, Review, MyListing }
+module.exports = { User, Post } //need to add Purchased, Review, & MyListing once available
