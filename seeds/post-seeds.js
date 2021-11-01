@@ -4,7 +4,6 @@ const postData = [
     {
         title: 'Listing test 1',
         price: 10,
-        info: 'this is some info about the product being sold or purchased',
         shipping: true,
         description: 'this is a string',
         picture_url: 'http://apicture.com',
@@ -13,7 +12,6 @@ const postData = [
     {
         title: 'Listing test 2',
         price: 20,
-        info: 'this is some info about the product being sold or purchased',
         shipping: false,
         description: 'this is a string',
         picture_url: 'http://apicture.com',
@@ -22,7 +20,6 @@ const postData = [
     {
         title: 'Listing test 3',
         price: 30,
-        info: 'this is some info about the product being sold or purchased',
         shipping: true,
         description: 'this is a string',
         picture_url: 'http://apicture.com',
@@ -31,7 +28,6 @@ const postData = [
     {
         title: 'Listing test 4',
         price: 40,
-        info: 'this is some info about the product being sold or purchased',
         shipping: false,
         description: 'this is a string',
         picture_url: 'http://apicture.com',
@@ -40,7 +36,6 @@ const postData = [
     {
         title: 'Listing test 5',
         price: 50,
-        info: 'this is some info about the product being sold or purchased',
         shipping: true,
         description: 'this is a string',
         picture_url: 'http://apicture.com',
@@ -49,7 +44,6 @@ const postData = [
     {
         title: 'Listing test 6',
         price: 60,
-        info: 'this is some info about the product being sold or purchased',
         shipping: true,
         description: 'this is a string',
         picture_url: 'http://apicture.com',
@@ -58,7 +52,6 @@ const postData = [
     {
         title: 'Listing test 7',
         price: 70,
-        info: 'this is some info about the product being sold or purchased',
         shipping: true,
         description: 'this is a string',
         picture_url: 'http://apicture.com',
@@ -67,7 +60,6 @@ const postData = [
     {
         title: 'Listing test 8',
         price: 80,
-        info: 'this is some info about the product being sold or purchased',
         shipping: false,
         description: 'this is a string',
         picture_url: 'http://apicture.com',
@@ -76,7 +68,6 @@ const postData = [
     {
         title: 'Listing test 9',
         price: 90,
-        info: 'this is some info about the product being sold or purchased',
         shipping: true,
         description: 'this is a string',
         picture_url: 'http://apicture.com',
@@ -85,7 +76,6 @@ const postData = [
     {
         title: 'Listing test 10',
         price: 100,
-        info: 'this is some info about the product being sold or purchased',
         shipping: true,
         description: 'this is a string',
         picture_url: 'http://apicture.com',

@@ -20,10 +20,6 @@ Post.init(
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    info: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
     shipping: {
       type: DataTypes.BOOLEAN,
       allowNull: false
@@ -35,9 +31,6 @@ Post.init(
     picture_url: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        isURL: true
-      }
     },
     user_id: {
       type: DataTypes.INTEGER,
