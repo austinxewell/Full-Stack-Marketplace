@@ -22,7 +22,7 @@
     </nav>
 
     <!-- Add Img section -->
-<div class="column is-full border mb-2  has-background-light">
+<div id="new-post-form" class="column is-full border mb-2  has-background-light">
     <div class="columns">
         <div class="column is-2 borderRight">
             <!-- Img uploading tech should replace img placeholder -->
@@ -35,20 +35,95 @@
             </div>
         </div>
         <!-- Text areas for title, price, and shipping -->
-        <div id="" class="column is-2 borderRight">
-            <textarea class="textAreaInfo" placeholder=" Title of Item:" ></textarea>
-            <textarea class="textAreaInfo" placeholder=" Price of Item:" ></textarea>
-            <textarea class="textAreaInfo" placeholder=" Shipping Info:" ></textarea>
+        <div  class="column is-2 borderRight">
+            <textarea id="post-title" class="textAreaInfo" placeholder=" Title of Item:" >{{post-title}}</textarea>
+            <textarea id="post-price" class="textAreaInfo" placeholder=" Price of Item:" >{{post-price}}</textarea>
+            <label>Shipping: </label>
+            <select class="dropdown $dropdown-item-active-color"> Shipping: 
+                <option value="true">Yes</option>
+                <option value="false">no</option>
+            </select>
         </div>
             <!-- Text area for description -->
-            <textarea class="column is-auto" placeholder=" Description of Item:" ></textarea>
+            <textarea class="column is-6 borderRight" placeholder=" Description of Item:" >{{post-desciption}}</textarea>
+            {{!-- submit button --}}
+        <div class="column is-2">
+            <button class="button is-info">
+                <strong>Submit</strong>
+            </button>
+        </div>
     </div>
 </div>
-<!-- Submit button -->
-<div class="column">
-    <div class="buttons column is-2">
-        <a id="" class="button is-$white has-text-info ml-5">
-        <strong>Submit</strong>
-        </a>
+
+<script src="/javascript/add-post.js"></script> 
+
+
+
+{{!-- end of demo code for my listing item --}}
+
+ {{!-- Template code --}}
+    {{!-- <!-- Body -->
+    <!-- Purchased Listings text and Add Money Button -->
+    <div class="columns">
+        <div class="column is-10">
+            <p class="is-size-2 ml-3 has-text-white">Purchased Listings:</p>
+        </div>
+        <div class="column is-2">
+            <div class="buttons">
+                <a id="" class="button is-$white has-text-info">
+                <strong>Add Money!</strong>
+                </a>
+            </div>
+        </div>
     </div>
-</div>
+
+    <h2>Create New Listing</h2>
+
+    <form class="new-post-form">
+        <div>
+            <label for="post-title">Listing Title</label>
+            <input type="text" id="post-title" name="post-title" />
+        </div>
+        <div>
+            <label for="post-price">Listing Price</label>
+            <input type="number" id="post-price" name="post-price" />
+        </div>
+        <div>
+            <label for="post-info">Listing Information</label>
+            <input type="text" id="post-info" name="post-info" />
+        </div>
+        <div>
+            <label for="">Listing shipping</label>
+            <input type="checkbox" id="post-shipping" name="post-shipping" />
+        </div>
+        <button type="submit" class="btn">Create</button>
+    </form>
+</section>
+{{#if posts.length}}
+<section>
+    <h2>Your Listing</h2>
+    <ol>
+        {{#each posts as |post|}}
+        <li>
+            {{> post-title post}}
+            <a href="/dashboard/edit/{{post.id}}" class="edit-title">Edit Listing Title</a>
+        </li>
+        <li>
+            {{> post-price post}}
+            <a href="/dashboard/edit/{{post.id}}" class="edit-price">Edit Listing Price</a>
+        </li>
+        <li>
+            {{> post-info post}}
+            <a href="/dashboard/edit/{{post.id}}" class="edit-info">Edit Listing Information</a>
+        </li>
+        <li>
+            {{> post-shipping post}}
+            <a href="/dashboard/edit/{{post.id}}" class="edit-shipping">Edit Listing Shipping</a>
+        </li>
+        {{/each}}
+    </ol>
+</section>
+{{/if}} --}}
+
+{{!-- <script src="/javascript/add-post.js"></script>  --}}
+{{!-- end of template code --}}
