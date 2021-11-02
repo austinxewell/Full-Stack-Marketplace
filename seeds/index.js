@@ -22,9 +22,27 @@ const seedAll = async () => {
     } catch(err) {
         console.log(err);
     };
+    try {
+    await seedPurchased();
+    console.log('\n---------PURCHASED SEEDED-----------\n');
+    } catch(err) {
+        console.log(err);
+    };
+    try {
+    await seedReview();
+    console.log('\n---------REVIEW SEEDED-----------\n');
+    } catch(err) {
+        console.log(err);
+    };
+    try {
+    await seedMyListing();
+    console.log('\n---------MYLISTING SEEDED-----------\n');
+    } catch(err) {
+        console.log(err);
+    };
     // Add more seeds as needed
     // await seedProducts();
-    // console.log('\n----- PRODUCTS SEEDED -------\n);
+    // console.log('\n----- MyListing SEEDED -------\n);
     // and so on and so forth
 
     process.exit(0);
