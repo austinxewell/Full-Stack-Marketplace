@@ -1,24 +1,18 @@
- 
- <!--Header/Navbar-->
+    <!--Header/Navbar-->
     <nav class="navbar has-background-light mb-5" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <img src="/images/marketplace placeholder.png" alt="Full Stack Marketplace Logo" style="width: 300px; height: 100px;">            
         </div>    
         <div class="navbar-end">
             <div class="navbar-item">
-            <div class="buttons">
-                <a href="/" class="button is-light">
-                Home
-                </a>
-                <a href="/mylisting" class="button is-light">
-                New Listing
-                </a>
-                <button id="logout" class="button is-info">
-                    <strong>Logout</strong>
-                </button>
+                <div class="buttons">
+                    <a href="/" class="button is-light">Home</a>
+                    <a href="/mylisting" class="button is-light">New Listing</a>
+                    <button id="logout" class="button is-info">
+                        <strong>Logout</strong>
+                    </button>
+                </div>
             </div>
-            </div>
-        </div>
         </div>
     </nav>
 
@@ -31,7 +25,7 @@
         <div class="column is-2">
             <div class="buttons">
                 <a id="" class="button is-$white has-text-info">
-                <strong>Add Money!</strong>
+                    <strong>Add Money!</strong>
                 </a>
             </div>
         </div>
@@ -70,7 +64,7 @@
     {{/each}}
 </ol>
 
-        <!-- My Listings text -->
+    <!-- My Listings text -->
     <div class="columns">
         <div class="column is-10">
             <p class="is-size-2 ml-3 has-text-white">My Listings:</p>
@@ -78,7 +72,6 @@
     </div>
 
 <!-- my-listings partials -->
-
 <ol class='post-list'>
     {{#each posts as |post|}}
     <li>
@@ -87,7 +80,6 @@
     <br>
     {{/each}}
 </ol>
-
 
 {{!-- demo code for my listing item--}}
     <div class="columns">
@@ -108,73 +100,3 @@
     </div>
 
 <script src="/javascript/logout.js"></script>
-
-
-{{!-- end of demo code for my listing item --}}
-
- {{!-- Template code --}}
-    {{!-- <!-- Body -->
-    <!-- Purchased Listings text and Add Money Button -->
-    <div class="columns">
-        <div class="column is-10">
-            <p class="is-size-2 ml-3 has-text-white">Purchased Listings:</p>
-        </div>
-        <div class="column is-2">
-            <div class="buttons">
-                <a id="" class="button is-$white has-text-info">
-                <strong>Add Money!</strong>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <h2>Create New Listing</h2>
-
-    <form class="new-post-form">
-        <div>
-            <label for="post-title">Listing Title</label>
-            <input type="text" id="post-title" name="post-title" />
-        </div>
-        <div>
-            <label for="post-price">Listing Price</label>
-            <input type="number" id="post-price" name="post-price" />
-        </div>
-        <div>
-            <label for="post-info">Listing Information</label>
-            <input type="text" id="post-info" name="post-info" />
-        </div>
-        <div>
-            <label for="">Listing shipping</label>
-            <input type="checkbox" id="post-shipping" name="post-shipping" />
-        </div>
-        <button type="submit" class="btn">Create</button>
-    </form>
-</section>
-{{#if posts.length}}
-<section>
-    <h2>Your Listing</h2>
-    <ol>
-        {{#each posts as |post|}}
-        <li>
-            {{> post-title post}}
-            <a href="/dashboard/edit/{{post.id}}" class="edit-title">Edit Listing Title</a>
-        </li>
-        <li>
-            {{> post-price post}}
-            <a href="/dashboard/edit/{{post.id}}" class="edit-price">Edit Listing Price</a>
-        </li>
-        <li>
-            {{> post-info post}}
-            <a href="/dashboard/edit/{{post.id}}" class="edit-info">Edit Listing Information</a>
-        </li>
-        <li>
-            {{> post-shipping post}}
-            <a href="/dashboard/edit/{{post.id}}" class="edit-shipping">Edit Listing Shipping</a>
-        </li>
-        {{/each}}
-    </ol>
-</section>
-{{/if}} --}}
-
-{{!-- <script src="/public/javascript/add-post.js"></script>  --}}
-{{!-- end of template code --}}
