@@ -44,31 +44,13 @@ async function signupFormHandler(event) {
         // check the response status
         if (response.ok) {
             console.log("success");
+            alert('Your account has been created, please login.')
         } else {
             alert(response.statusText);
         }
     }
 }
 
-async function home() {
-    const response = await fetch(`/login`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' }
-    });
+document.querySelector('#login-form').addEventListener('submit', loginFormHandler);
 
-    if (response.ok) {
-        document.location.replace('/');
-    } else {
-        alert(response.statusText);
-    }
-}
-
-document
-    .querySelector('.login-form')
-    .addEventListener('submit', loginFormHandler);
-document
-    .querySelector('.signup-form')
-    .addEventListener('submit', signupFormHandler);
-document
-    .querySelector('.button-home')
-    .addEventListener('click', home);
+document.querySelector('#signup-form').addEventListener('submit', signupFormHandler);
