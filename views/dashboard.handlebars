@@ -7,10 +7,10 @@
         <div class="navbar-end">
             <div class="navbar-item">
             <div class="buttons">
-                <a class="button is-light">
+                <a href="/" class="button is-light">
                 Home
                 </a>
-                <a class="button is-light">
+                <a href="/mylisting" class="button is-light">
                 New Listing
                 </a>
                 <a id="sign-up" class="button is-info">
@@ -60,28 +60,15 @@
         </div>
     </div>
 
-        <!-- Purchased Item 2-->
-        <div class="columns">
-            <div class="column is-full border mb-2  has-background-light">
-                <div class="columns">
-                    <img class="column is-2 ml-3 borderRight" src="/images/img placeholder.png" alt="Item Image" style="width: 200px; height: 200px;">
-                    <div id="" class="column is-2 borderRight">
-                        <p><strong>Title:</strong> "title of item"</p>
-                        <p><strong>Price:</strong> "price of item"</p>
-                        <p><strong>Shipping:</strong> "Yes/No"</p>
-                    </div>
-                    <div class="column is-6 borderRight">
-                        <p><strong>Description:</strong></p>
-                        <p>this will be the description of your product</p>
-                    </div>
-                    <div class="column is-2">
-                        <a id="" class="button is-info">
-                            <strong>Reviews</strong>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+{{!-- purchased-items partial --}}
+<ol class='post-list'>
+    {{#each posts as |post|}}
+    <li>
+        {{> purchased-items post }}
+    </li>
+    <br>
+    {{/each}}
+</ol>
 
         <!-- My Listings text -->
     <div class="columns">
@@ -90,7 +77,19 @@
         </div>
     </div>
 
-        <!-- My Listings listing 1 -->
+<!-- my-listings partials -->
+
+<ol class='post-list'>
+    {{#each posts as |post|}}
+    <li>
+        {{> my-listings post }}
+    </li>
+    <br>
+    {{/each}}
+</ol>
+
+
+{{!-- demo code for my listing item--}}
     <div class="columns">
         <div class="column is-full border mb-2  has-background-light">
             <div class="columns">
@@ -107,32 +106,7 @@
             </div>
         </div>
     </div>
-
-        <!-- My Listings listing 2 -->
-        <div class="columns">
-            <div class="column is-full border mb-2  has-background-light">
-                <div class="columns">
-                    <img class="column is-2 ml-3 borderRight" src="/images/img placeholder.png" alt="Item Image" style="width: 200px; height: 200px;">
-                    <div id="" class="column is-2 borderRight">
-                        <p><strong>Title:</strong> "title of item"</p>
-                        <p><strong>Price:</strong> "price of item"</p>
-                        <p><strong>Shipping:</strong> "Yes/No"</p>
-                    </div>
-                    <div class="column is-auto borderRight">
-                        <p><strong>Description:</strong></p>
-                        <p>this will be the description of your product</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
- 
-
-
-
-
-
-
+{{!-- end of demo code for my listing item --}}
 
  {{!-- Template code --}}
     {{!-- <!-- Body -->

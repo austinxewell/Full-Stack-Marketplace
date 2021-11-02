@@ -1,11 +1,9 @@
 async function editFormHandler(event) {
     event.preventDefault();
 
-    const id = window.location.toString().split('/')[
-        window.location.toString().split('/').length -1
-    ];
-    const response = await fetch(`/api/posts/${id}`, {
-        method: 'PUT',
+
+    const response = await fetch(`/api/posts`, {
+        method: 'POST',
         body: JSON.stringify({
             title,
             price,
@@ -19,7 +17,7 @@ async function editFormHandler(event) {
     });
 
     if (response.ok) {
-        document.location.replace('/dashboard/');
+        document.location.reload;
     } else {
         alert(response.statusText);
     }
