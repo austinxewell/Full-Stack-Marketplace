@@ -2,7 +2,7 @@
 // const sequelize = require('../config/connection');
 
 // class Review extends Model {}
-    
+
 // Review.init(
 //     {
 //         id: {
@@ -12,7 +12,7 @@
 //             autoIncrement: true,
 //         },
 //         buyer_review: {
-//             type: DataTypes.STRING, 
+//             type: DataTypes.TEXT,
 //         },
 //         seller_username: {
 //             type: DataTypes.STRING,

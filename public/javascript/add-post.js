@@ -1,10 +1,11 @@
 async function newFormHandler(event) {
     event.preventDefault();
 
-    const title = document.querySelector('input[name="post-title"]').value;
-    const price = document.querySelector('input[name="post-price"]').value;
-    const shipping = document.querySelector('input[name="post-shipping"]').value;
-    const description = document.querySelector('input[name="post-info"]').value;
+    const title = document.querySelector('input[name="post-title"]').value.trim();
+    const price = document.querySelector('input[name="post-price"]').value.trim();
+    const shipping = document.querySelector('input[name="post-shipping"]').value.trim();
+    const description = document.querySelector('input[name="post-description"]').value.trim();
+    const picture_url = document.querySelector('input[name="picture_url"]').value.trim();
 
     const response = await fetch(`/api/posts`, {
         method: 'POST',
