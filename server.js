@@ -22,7 +22,7 @@ const sess = {
   store: new SequelizeStore({
     db: sequelize,
   }),
-};s
+};
 
 // middleware for sessions
 app.use(session(sess));
