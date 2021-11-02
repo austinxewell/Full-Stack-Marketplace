@@ -1,54 +1,73 @@
- <!--Header/Navbar-->
-    <nav class="navbar has-background-light mb-5" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <img src="/images/marketplace placeholder.png" alt="Full Stack Marketplace Logo" style="width: 300px; height: 100px;">            
-        </div>    
-        <div class="navbar-end">
-            <div class="navbar-item">
-            <div class="buttons">
-                <a href="/" class="button is-light">
-                Home
-                </a>
-                <a href="/dashboard" class="button is-light">
-                Dashboard
-                </a>
-                <a id="sign-up" class="button is-info">
-                    <strong>Logout</strong>
-                </a>
-            </div>
-            </div>
-        </div>
-        </div>
-    </nav>
+<!--Header/Navbar-->
+<nav class='navbar has-background-light mb-5' role='navigation' aria-label='main navigation'>
+   <div class='navbar-brand'>
+      <img
+         src='/images/marketplace placeholder.png'
+         alt='Full Stack Marketplace Logo'
+         style='width: 300px; height: 100px;'
+      />
+   </div>
+   <div class='navbar-end'>
+      <div class='navbar-item'>
+         <div class='buttons'>
+            <a href='/' class='button is-light'>
+               Home
+            </a>
+            <a href='/dashboard' class='button is-light'>
+               Dashboard
+            </a>
+            <button id='logout' class='button is-info'>
+               <strong>Logout</strong>
+            </button>
+         </div>
+      </div>
+   </div>
+</nav>
 
-    <!-- Add Img section -->
-<div class="column is-full border mb-2  has-background-light">
-    <div class="columns">
-        <div class="column is-2 borderRight">
-            <!-- Img uploading tech should replace img placeholder -->
-            <img class="column is-2 ml-3" src="/images/img placeholder.png" alt="Item Image" style="width: 200px; height: 200px;">
-            <!-- If this button is needed -->
-            <div class="buttons ml-5">
-                <a id="" class="button is-info">
-                <strong>Upload Image</strong>
-                </a>
+{{! <textarea class="textAreaInfo" name="item_shipping" placeholder=" Shipping Info:" ></textarea> }}
+
+<section>
+   <h2>Create New Post</h2>
+   <form class='new-post-form' id='new-post-form' enctype='multipart/form-data' method='POST' action='/api/posts'>
+      <!-- Add Img section -->
+      <div id='new-post-form' class='column is-full border mb-2 has-background-light'>
+         <div class='columns'>
+            <div class='column is-2 borderRight'>
+               <textarea
+                  id='post-title'
+                  class='textAreaInfo'
+                  name='item_title'
+                  placeholder=' Title of Item:'
+               >{{post-title}}</textarea>
+               <textarea
+                  id='post-price'
+                  class='textAreaInfo'
+                  name='item_price'
+                  placeholder=' Price of Item:'
+               >{{post-price}}</textarea>
+               {{! <label>Shipping: </label>
+                    <select class="dropdown $dropdown-item-active-color"> Shipping: 
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select> }}
+               <input type='file' id='item_img' name='item_img' />
             </div>
-        </div>
-        <!-- Text areas for title, price, and shipping -->
-        <div id="" class="column is-2 borderRight">
-            <textarea class="textAreaInfo" placeholder=" Title of Item:" ></textarea>
-            <textarea class="textAreaInfo" placeholder=" Price of Item:" ></textarea>
-            <textarea class="textAreaInfo" placeholder=" Shipping Info:" ></textarea>
-        </div>
             <!-- Text area for description -->
-            <textarea class="column is-auto" placeholder=" Description of Item:" ></textarea>
-    </div>
-</div>
-<!-- Submit button -->
-<div class="column">
-    <div class="buttons column is-2">
-        <a id="" class="button is-$white has-text-info ml-5">
-        <strong>Submit</strong>
-        </a>
-    </div>
-</div>
+            <textarea
+               class='column is-6 borderRight'
+               name='item_description'
+               placeholder=' Description of Item:'
+            >{{post-desciption}}</textarea>
+            {{! submit button }}
+            <div class='column is-2'>
+               <button type='submit' class='button is-info'>
+                  <strong>Submit</strong>
+               </button>
+            </div>
+         </div>
+      </div>
+   </form>
+</section>
+
+{{! <script src="/javascript/add-post.js"></script>  }}
+<script src='/javascript/logout.js'></script>
