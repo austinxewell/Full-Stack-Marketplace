@@ -24,3 +24,7 @@
   border-color: #227dd2;
   resize: none;
 }
+
+.passwordProtection {
+  -webkit-text-security: disc;
+}
