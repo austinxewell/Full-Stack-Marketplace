@@ -1,5 +1,8 @@
 const seedUsers = require('./user-seeds');
 const seedPosts = require('./post-seeds');
+//const seedMyListings = require('./mylisting-seeds');
+//const seedreviews = require('./review-seeds);
+//const seedpurchased = require('./purchased-seeds);
 
 const sequelize = require('../config/connection');
 
@@ -22,29 +25,24 @@ const seedAll = async () => {
     } catch(err) {
         console.log(err);
     };
-    try {
-    await seedPurchased();
-    console.log('\n---------PURCHASED SEEDED-----------\n');
-    } catch(err) {
-        console.log(err);
-    };
-    try {
-    await seedReview();
-    console.log('\n---------REVIEW SEEDED-----------\n');
-    } catch(err) {
-        console.log(err);
-    };
-    try {
-    await seedMyListing();
-    console.log('\n---------MYLISTING SEEDED-----------\n');
-    } catch(err) {
-        console.log(err);
-    };
-    // Add more seeds as needed
-    // await seedProducts();
-    // console.log('\n----- MyListing SEEDED -------\n);
-    // and so on and so forth
-
+    // try {
+    // await seedPurchased();
+    // console.log('\n---------PURCHASED SEEDED-----------\n');
+    // } catch(err) {
+    //     console.log(err);
+    // };
+    // try {
+    // await seedReview();
+    // console.log('\n---------REVIEW SEEDED-----------\n');
+    // } catch(err) {
+    //     console.log(err);
+    // };
+    // try {
+    // await seedMyListing();
+    // console.log('\n---------MYLISTING SEEDED-----------\n');
+    // } catch(err) {
+    //     console.log(err);
+    // };
     process.exit(0);
 };
 

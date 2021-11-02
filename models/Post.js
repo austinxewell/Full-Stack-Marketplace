@@ -24,6 +24,10 @@ Post.init(
          type: DataTypes.BOOLEAN,
          allowNull: false,
       },
+      shipping_info: {
+         type: DataTypes.TEXT,
+         allowNull: true,
+      },
       description: {
          type: DataTypes.TEXT,
          allowNull: false,

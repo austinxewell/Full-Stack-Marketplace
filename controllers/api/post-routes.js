@@ -7,7 +7,7 @@ const withAuth = require('../../utils/auth');
 router.get('/', (req, res) => {
    console.log('=======================');
    Post.findAll({
-      attributes: ['id', 'title', 'price', 'shipping', 'description', 'picture_url'],
+      attributes: ['id', 'title', 'price', 'shipping', 'shipping_info', 'description', 'picture_url'],
       include: [
          {
             model: User,
@@ -27,7 +27,7 @@ router.get('/:id', (req, res) => {
       where: {
          id: req.params.id,
       },
-      attributes: ['id', 'title', 'price', 'shipping', 'description', 'picture_url'],
+      attributes: ['id', 'title', 'price', 'shipping', 'shipping_info', 'description', 'picture_url'],
       include: [
          {
             model: User,
@@ -68,6 +68,7 @@ router.post('/', withAuth, (req, res) => {
       title: req.body.item_title,
       price: req.body.item_price,
       shipping: req.body.item_shipping,
+      shipping_info: req.body.item.shipping_info,
       description: req.body.item_description,
       picture_url: path,
       user_id: req.session.user_id,
@@ -96,6 +97,7 @@ router.put('/:id', withAuth, (req, res) => {
          title: req.body.title,
          price: req.body.price,
          shipping: req.body.shipping,
+         shipping_info: req.body.shipping_info,
          description: req.body.description,
          picture_url: req.body.picture_url,
          user_id: req.session.user_id,

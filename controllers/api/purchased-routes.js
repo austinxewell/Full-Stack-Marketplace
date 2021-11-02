@@ -4,8 +4,15 @@
 
 // router.put("/:id", withAuth, (req, res) => {
 //   Post.update(
-//     {
-//       buyer_id: req.session.user_id,
+//     {//really unsure of what to put here to sell the Listing // I assume it would need to be a put since new data will be assigned to it referencing the 
+//     // buyer_username to tie back to the user purchasing the listing
+//       title: req.body.title,
+//       price: req.body.price,
+//       shipping: req.body.shipping,
+//       shipping_info: req.body.shipping_info,
+//       description: req.body.description,
+//       picture_url: req.body.picture_url,
+//       user_id: req.session.user_id,
 //     },
 //     {
 //       where: {
