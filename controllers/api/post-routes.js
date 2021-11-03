@@ -60,53 +60,63 @@ router.get('/:id', (req, res) => {
 });
 
 // CREATE a POST
-router.post('/', withAuth, (req, res) => {
-   console.log('creating item: ');
-
-   console.log('CHECKING REQ IN POST.CREATE(): req.files', req.files);
-   console.log('CHECKING REQ IN POST.CREATE(): req.files.post_img', req.files.item_img);
-   console.log('CHECKING REQ IN POST.CREATE(): req.files.post_img.name', req.files.item_img.name);
-   console.log('CHECKING REQ IN POST.CREATE(): req.body.post_title', req.body.item_title);
-   // console.log('CHECKING REQ IN POST.CREATE(): req.body.post_url', req.body.item_url);
-   console.log('************************************************************');
-
-   // filePath to root directory + public/images folder
-   let filePath = process.cwd() + '/public/images/';
-   // let filePath = 'http://localhost:3001/public/images/';
-   // Completes filePath with file name IF a file was uploaded.
-   // If no file was uploaded, provide 'no-img-available.png'
-   filePath += req.files ? req.files.item_img.name : 'no-image-available.png';
-   const file = '/images/' + req.files.item_img.name; // GETS the file and pass it the img file
-   // const file = req.files.item_img.name; // GETS the file and pass it the img file
+router.post('/', withAuth, (req, res) =>
+{
+   const NO_IMAGE_URL =
+      'https://res.cloudinary.com/joseepina/image/upload/v1635966743/istockphoto-922962354-170667a_ys4tsk.jpg';
+   const file = req.files ? '/marketplace/images/' + req.files.item_img.name : ''; // GETS the file from front-end
    console.log('~ file', file);
+   let filePath = '';
 
-   cloudinary.uploader.upload(file, function (error, result) {
-      if (!error) {
-         console.log(result);
-         filePath = result.url;
-         console.log('~ filePath', filePath);
-      } else {
-         console.log('ERROR IN CLOUDINARY.IPLOADER.UPLOAD()', error);
-      }
-   });
+   if (file) {
+      cloudinary.uploader.upload(file, function (error, result) {
+         if (!error) {
+            console.log(result);
+            console.log('~ FILEPATH ON UPLOAD SUCESS: ', result.secure_url);
+            Post.create({
+               title: req.body.item_title,
+               price: req.body.item_price,
+               shipping: req.body.item_shipping,
+               description: req.body.item_description,
+               picture_url: result.secure_url,
+               user_id: req.session.user_id,
+            })
+               .then((dbPostData) => {
+                  console.log('CREATED RECORD/UPLOAD FILE');
+                  return res.json(dbPostData);
+                  // res.render('homepage', { loggedIn: true });
+               })
+               .catch((err) => {
+                  console.log(err);
+                  res.status(500).json(err);
+               });
 
-   Post.create({
-      title: req.body.item_title,
-      price: req.body.item_price,
-      shipping: req.body.item_shipping,
-      description: req.body.item_description,
-      picture_url: filePath,
-      user_id: req.session.user_id,
-   })
-      .then((dbPostData) => {
-         console.log('CREATED RECORD/UPLOAD FILE');
-
-         // res.render('homepage', { loggedIn: true });
-      })
-      .catch((err) => {
-         console.log(err);
-         res.status(500).json(err);
+            //res.cloudinary.com/joseepina/image/upload/v1635966743/istockphoto-922962354-170667a_ys4tsk.jpg
+         } else {
+            console.log('ERROR IN CLOUDINARY.IPLOADER.UPLOAD()', error);
+            res.status(500).json({ message: 'ERROR IN CLOUDINARY.IPLOADER.UPLOAD()', error: error });
+         }
       });
+   } else {
+      console.log('~ FILEPATH BEFORE no image: ', NO_IMAGE_URL);
+      Post.create({
+         title: req.body.item_title,
+         price: req.body.item_price,
+         shipping: req.body.item_shipping,
+         description: req.body.item_description,
+         picture_url: NO_IMAGE_URL,
+         user_id: req.session.user_id,
+      })
+         .then((dbPostData) => {
+            console.log('CREATED NO IMAGE RECORD/UPLOAD FILE');
+            return res.json(dbPostData);
+            // res.render('homepage', { loggedIn: true });
+         })
+         .catch((err) => {
+            console.log(err);
+            res.status(500).json(err);
+         });
+   }
 });
 
 router.put('/:id', withAuth, (req, res) => {
