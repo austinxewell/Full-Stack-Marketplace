@@ -11,13 +11,14 @@ router.use('/buyerReview', buyerReviewRoutes);
 router.use('/purchased', purchasedRoutes);
 
 const moneyRoutes = require('./money-routes');
-// const { User } = require('../../models');
-//const buyerReviewRoutes = require('./buyerReview-routes');
 
 router.use('/users', userRoutes);
 router.use('/posts', postRoutes);
 router.use('/money', moneyRoutes);
+
 router.use('/buyerReview', buyerReviewRoutes);
+
+//router.use('/buyerReview', buyerReviewRoutes);
 
 // router.put("/money", (req,res) => {
 //     User.increment({
