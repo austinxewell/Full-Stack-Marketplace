@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require("../../models");
+const { User, Post } = require("../../models");
 
   router.put("/add", (req,res) => {
     User.increment({
@@ -18,7 +18,7 @@ const { User } = require("../../models");
 
   router.put("/subtract", (req,res) => {
     User.decrement({
-      money: 35
+      money: Post.req.body.price
     },
     {
       where: {
