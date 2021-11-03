@@ -2,7 +2,6 @@ const router = require('express').Router();
 
 const userRoutes = require('./user-routes');
 const postRoutes = require('./post-routes');
-<<<<<<< HEAD
 const buyerReviewRoutes = require('./buyerReview-routes');
 const purchasedRoutes = require('./purchased-routes');
 
@@ -10,7 +9,7 @@ router.use('/users', userRoutes);
 router.use('/posts', postRoutes);
 router.use('/buyerReview', buyerReviewRoutes);
 router.use('/purchased', purchasedRoutes);
-=======
+
 const moneyRoutes = require('./money-routes');
 // const { User } = require('../../models');
 //const buyerReviewRoutes = require('./buyerReview-routes');
@@ -18,8 +17,7 @@ const moneyRoutes = require('./money-routes');
 router.use('/users', userRoutes);
 router.use('/posts', postRoutes);
 router.use('/money', moneyRoutes);
-//router.use('/buyerReview', buyerReviewRoutes);
->>>>>>> bd3acc71109706bd93710bc33e143e7b21d3869b
+router.use('/buyerReview', buyerReviewRoutes);
 
 // router.put("/money", (req,res) => {
 //     User.increment({
