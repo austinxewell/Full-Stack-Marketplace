@@ -2,6 +2,7 @@
 
  const purchasedData = [
      {
+
          buyer_id: 2,
          post_id: 1
      },
@@ -9,7 +10,7 @@
          buyer_id: 3,
          post_id: 2
      },
-     {
+     { 
          buyer_id: 4,
          post_id: 3
      },
