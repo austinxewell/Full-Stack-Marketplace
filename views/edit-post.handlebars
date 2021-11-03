@@ -27,11 +27,15 @@
 {{! <textarea class="textAreaInfo" name="item_shipping" placeholder=" Shipping Info:" ></textarea> }}
 
 <section>
-   <h2>Create New Post</h2>
+   <h2 class="is-size-2 is-underlined has-text-white ml-3">Create New Listing</h2>
+   <br>
    <form class='new-post-form' id='new-post-form' enctype='multipart/form-data' method='POST' action='/api/posts'>
       <!-- Add Img section -->
       <div id='new-post-form' class='column is-full border mb-2 has-background-light'>
          <div class='columns'>
+            <div class='column is-2 borderRight'>
+               <input type='file' id='item_img' name='item_img' />
+            </div>
             <div class='column is-2 borderRight'>
                <textarea
                   id='post-title'
@@ -45,12 +49,12 @@
                   name='item_price'
                   placeholder=' Price of Item:'
                >{{post-price}}</textarea>
-               {{! <label>Shipping: </label>
+               <br>
+               <label>Shipping: </label>
                     <select class="dropdown $dropdown-item-active-color"> Shipping: 
                         <option value="true">Yes</option>
                         <option value="false">No</option>
-                    </select> }}
-               <input type='file' id='item_img' name='item_img' />
+                    </select>
             </div>
             <!-- Text area for description -->
             <textarea
