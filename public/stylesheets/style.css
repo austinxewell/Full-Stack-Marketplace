@@ -28,3 +28,7 @@
 .passwordProtection {
   -webkit-text-security: disc;
 }
+
+.fileBottom {
+  padding-top: 40%;
+}
