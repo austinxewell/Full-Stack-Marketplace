@@ -10,8 +10,6 @@ const exphbs = require('express-handlebars');
 //* import new fileupload tool.
 const fileUpload = require('express-fileupload');
 
-
-
 // Express
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -52,6 +50,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(require('./controllers/'));
 
 // turn on connection to db and server
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: true }).then(() => {
    app.listen(PORT, () => console.log('Now listening in port: ', PORT));
 });
