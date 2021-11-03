@@ -2,6 +2,7 @@ const { Post } = require("../models");
 
 const postData = [
   {
+    seller_id: 1,
     title: "Listing Grey Murray",
     price: 10,
     shipping: true,
@@ -12,6 +13,7 @@ const postData = [
     
   },
   {
+    seller_id: 2,
     title: "Listing Calm Cage",
     price: 20,
     shipping: false,
@@ -22,6 +24,7 @@ const postData = [
     
   },
   {
+    seller_id: 3,
     title: "Listing Grey Cage",
     price: 30,
     shipping: true,
@@ -32,6 +35,7 @@ const postData = [
     
   },
   {
+    seller_id: 4,
     title: "Listing Crazy Cage",
     price: 40,
     shipping: false,
@@ -42,6 +46,7 @@ const postData = [
     
   },
   {
+    seller_id: 5,
     title: "Listing Gif Cage",
     price: 50,
     shipping: true,
@@ -52,6 +57,7 @@ const postData = [
     
   },
   {
+    seller_id: 6,
     title: "Listing Calm Steve",
     price: 60,
     shipping: true,
@@ -62,6 +68,7 @@ const postData = [
     
   },
   {
+    seller_id: 7,
     title: "Listing Calm Murray",
     price: 70,
     shipping: true,
@@ -72,6 +79,7 @@ const postData = [
     
   },
   {
+    seller_id: 8,
     title: "Listing Grey Steve",
     price: 80,
     shipping: false,
@@ -82,6 +90,7 @@ const postData = [
     
   },
   {
+    seller_id: 9,
     title: "Listing Fish Murray",
     price: 90,
     shipping: true,
@@ -92,6 +101,7 @@ const postData = [
     
   },
   {
+    seller_id: 10,
     title: "Listing Picaso Murray",
     price: 100,
     shipping: true,
