@@ -8,9 +8,9 @@ router.get("/", (req, res) => {
 });
 
 
-// Find user by id and include their posts
+// Find user by id and include their Listings
 router.get("/:id", (req, res) => {
-  User.findByPk({
+  User.findOne({
     attributes: { exclude: ["password"] },
     where: {
       loggedIn: req.session.loggedIn,
