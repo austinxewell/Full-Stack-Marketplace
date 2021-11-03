@@ -54,8 +54,7 @@ User.init(
     // TODO: need to make it so the end user can enter money and use it to purchase Listings
     money: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      defaultValue: 100,
+      defaultValue: 0,
     },
   },
   {

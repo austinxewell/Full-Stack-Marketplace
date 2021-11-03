@@ -11,7 +11,6 @@ router.get("/", (req, res) => {
       // use ID from the session
       user_id: req.session.user_id,
     },
-    attributes: ["id", "title", "price", "shipping", "description", "picture_url"],
     include: [
       {
         model: User,
@@ -21,7 +20,7 @@ router.get("/", (req, res) => {
   }).then((dbPostData) => {
       // serialize data before passing to template
       const posts = dbPostData.map((post) => post.get({ plain: true }));
-      res.render("dashboard", { posts, loggedIn: true });
+      res.render("dashboard", { posts, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
       console.log(err);

@@ -53,7 +53,7 @@ router.post("/", (req, res) => {
       req.session.username = dbUserData.username;
       req.session.loggedIn = true;
 
-      res.json(dbUserData);
+      res.json(dbUserData)
     });
   });
 });
@@ -135,5 +135,20 @@ router.delete('/:id', (req, res) => {
     res.status(500).json(err);
   });
 });
+
+router.put("/money", (req,res) => {
+  User.increment({
+    money: 100
+  },
+  {
+    where: {
+      id: req.session.user_id
+    }
+  }).then(dbUserData => res.json(dbUserData))
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+})
 
 module.exports = router;
