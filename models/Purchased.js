@@ -11,7 +11,7 @@ Purchased.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    buyer_id: {
+    buyers_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
