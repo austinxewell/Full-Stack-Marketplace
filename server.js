@@ -47,7 +47,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // * New Express FileUpload Middleware
-app.use(fileUpload());
+//app.use(fileUpload());
 
 app.use(require('./controllers/'));
 
