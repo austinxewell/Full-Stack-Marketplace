@@ -1,32 +1,48 @@
-<form class="login-form">
-    <div>
-        <label for="email-login">email:</label>
-        <input type="text" id="email-login" />
-    </div>
-    <div>
-        <label for="password-login">password:</label>
-        <input type="password" id="password-login" />
-    </div>
-    <div>
-        <button type="submit">login</button>
-    </div>
-</form>
+<!--Header/Navbar-->
+    <nav class="navbar has-background-light mb-5" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <img src="/images/marketplace placeholder.png" alt="Full Stack Marketplace Logo" style="width: 300px; height: 100px;">            
+        </div>    
+        <div class="navbar-end">
+            <div class="navbar-item">
+            <div class="buttons">
+                <a href="/" id="sign-up" class="button is-info">
+                <strong>Home</strong>
+                </a>
+            </div>
+            </div>
+        </div>
+        </div>
+    </nav>
 
-<form class="signup-form">
-    <div>
-        <label for="username-signup">username:</label>
-        <input type="text" id="username-signup" />
-    </div>
-    <div>
-        <label for="email-signup">email:</label>
-        <input type="text" id="email-signup" />
-    </div>
-     <div>
-        <label for="password-signup">password:</label>
-        <input type="password" id="password-signup" />
-    </div>
-    <div>
-        <button type="submit">signup</button>
-    </div>
-</form>
-<script src="/public/javascript/login.js"></script>
+    <!-- Body/Login -->
+    <!-- sign in form -->
+    <h2 class="is-size-2 is-underlined has-text-white ml-5">Login</h2>
+    <br>
+    <form id="login-form" class="pl-5 p-2 has-background-light">
+        <textarea id="email-login" class="textAreaLogin" cols="30" rows="1" placeholder="Email:">{{email}}</textarea>
+        <br>
+        <textarea id="password-login" class="textAreaLogin passwordProtection" cols="30" rows="1" placeholder="Password:">{{password}}</textarea>
+        <div class="buttons">
+            <button id="login-btn" class="button is-info">
+            Login
+            </button>
+        </div>
+    </form>
+    <h2 class="is-size-2 is-underlined has-text-white ml-5">Sign Up</h2>
+    <br>
+    <!-- sign up form -->
+    <form id="signup-form" class="pl-5 p-2 has-background-light">
+        <textarea id="username-signup" class="textAreaLogin" cols="30" rows="1" placeholder="Username:">{{username}}</textarea>
+        <br>
+        <textarea id="email-signup" class="textAreaLogin" cols="30" rows="1" placeholder="Email:">{{email}}</textarea>
+        <br>
+        <textarea id="password-signup" class="textAreaLogin passwordProtection" cols="30" rows="1" placeholder="Password:">{{password}}</textarea>
+        <div class="buttons">
+            <button id="signup-btn" class="button is-info">
+            Sign Up
+            </button>
+        </div>
+    </form>
+
+<script src="/javascript/login.js"></script>

@@ -1,5 +1,4 @@
-DROP DATABASE IF EXISTS project_two_db;
+DROP DATABASE IF EXISTS fullstack_db;
 
-CREATE DATABASE project_two_db;
-
-USE project_two_db;
+CREATE DATABASE fullstack_db;
+USE fullstack_db;

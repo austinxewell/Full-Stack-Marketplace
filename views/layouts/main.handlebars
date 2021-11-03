@@ -1,38 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
+<head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project 2</title>
+    <title>Full Stack Marketplace</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
-  </head>
+</head>
+  <body class="has-background-info">
+    <main>
+      {{{ body }}}
+    </main>
 
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>
-          <a href="/">Project 2</a>
-        </h1>
-        <nav>
-          {{#if loggedIn}}
-          <a href="/dashboard">dashboard</a>
-          <button id="logout" class="btn-no-style"></button>
-          {{else}}
-          <a href="/login">login</a>
-          {{/if}}
-        </nav>
-      </header>
-      <main>
-        {{{ body }}}
-      </main>
-      <footer>
-        Thanks for visiting!
+    <!-- Footer -->
+    <footer class="footer has-background-light">
+        <div class="content has-text-centered">
+          <p>
+            Thanks for visiting <strong>Full Stack Marketplace</strong> by <a href="https://github.com/austinxewell/project-2">Group 8</a>.
+          </p>
+        </div>
       </footer>
-    </div>
-    {{#if loggedIn}}
-    <script src="/public/javascript/logout.js"></script>
-    {{/if}}
-  </body>
-  
+  </body> 
 </html>

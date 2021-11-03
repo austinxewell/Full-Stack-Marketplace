@@ -1,30 +1,103 @@
-<section>
-    <h2>Create New Post</h2>
-
-    <form class="new-post-form">
-        <div>
-            <label for="post-title">Title</label>
-            <input type="text" id="post-title" name="post-title" />
+    <!--Header/Navbar-->
+    <nav class="navbar has-background-light mb-5" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <img src="/images/marketplace placeholder.png" alt="Full Stack Marketplace Logo" style="width: 300px; height: 100px;">            
+        </div>    
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons">
+                    <a href="/" class="button is-light">Home</a>
+                    <a href="/mylisting" class="button is-light">New Listing</a>
+                    <button id="logout" class="button is-info">
+                        <strong>Logout</strong>
+                    </button>
+                </div>
+            </div>
         </div>
-        <div>
-            <label for="post-url">Link</label>
-            <input id="post-url" name="post-url" />
-        </div>
-        <button type="submit" class="btn">Create</button>
-    </form>
-</section>
-{{#if posts.length}}
-<section>
-    <h2>Your Posts</h2>
-    <ol>
-        {{#each posts as |post|}}
-        <li>
-            {{> post-info post}}
-            <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
-        </li>
-        {{/each}}
-    </ol>
-</section>
-{{/if}}
+    </nav>
 
-<script src="/public/javascript/add-post.js"></script>
+    <!-- Body -->
+    <!-- Purchased Items text and Add Money Button -->
+    <h2 class="is-size-2 is-underlined has-text-white ml-3">Dashboard</h2>
+    <div class="columns">
+        <div class="column is-10">
+            <p class="is-size-3 ml-3 has-text-white">Purchased Items:</p>
+        </div>
+        <div class="column is-2">
+            <div class="buttons">
+                <a id="" class="button is-$white has-text-info">
+                    <strong>Add Money!</strong>
+                </a>
+            </div>
+        </div>
+    </div>
+
+        <!-- Purchased Item 1-->
+    <div class="columns">
+        <div class="column is-full border mb-2  has-background-light">
+            <div class="columns">
+                <img class="column is-2 ml-3 borderRight" src="/images/img placeholder.png" alt="Item Image" style="width: 200px; height: 200px;">
+                <div id="" class="column is-2 borderRight">
+                    <p><strong>Title:</strong> "title of item"</p>
+                    <p><strong>Price:</strong> "price of item"</p>
+                    <p><strong>Shipping:</strong> "Yes/No"</p>
+                </div>
+                <div class="column is-6 borderRight">
+                    <p><strong>Description:</strong></p>
+                    <p>this will be the description of your product</p>
+                </div>
+                <div class="column is-2">
+                    <a id="" class="button is-info">
+                        <strong>Leave Review</strong>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{{!-- purchased-items partial --}}
+<ol class='post-list'>
+    {{#each posts as |post|}}
+    <li>
+        {{> purchased-items post }}
+    </li>
+    <br>
+    {{/each}}
+</ol>
+
+    <!-- My Listings text -->
+    <div class="columns">
+        <div class="column is-10">
+            <p class="is-size-3 ml-3 has-text-white">My Listings:</p>
+        </div>
+    </div>
+
+<!-- my-listings partials -->
+<ol class='post-list'>
+    {{#each posts as |post|}}
+    <li>
+        {{> my-listings post }}
+    </li>
+    <br>
+    {{/each}}
+</ol>
+
+{{!-- demo code for my listing item--}}
+    <div class="columns">
+        <div class="column is-full border mb-2  has-background-light">
+            <div class="columns">
+                <img class="column is-2 ml-3 borderRight" src="/images/img placeholder.png" alt="Item Image" style="width: 200px; height: 200px;">
+                <div id="" class="column is-2 borderRight">
+                    <p><strong>Title:</strong> "title of item"</p>
+                    <p><strong>Price:</strong> "price of item"</p>
+                    <p><strong>Shipping:</strong> "Yes/No"</p>
+                </div>
+                <div class="column is-auto borderRight">
+                    <p><strong>Description:</strong></p>
+                    <p>this will be the description of your product</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="/javascript/logout.js"></script>
