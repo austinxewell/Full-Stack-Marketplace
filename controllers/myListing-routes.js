@@ -40,9 +40,11 @@ router.get('/:id', (req, res) => {
 // Create a Listing
 router.post('/', withAuth, (req, res) => {
     Post.create({
-      title: req.body.title,
-      post_url: req.body.post_url,
-      user_id: req.session.user_id
+        title: req.body.title,
+        price: req.body.price,
+        shipping: req.body.shipping,
+        description: req.body.description,
+        picture_url: req.body.picture_url,
     })
       .then(dbPostData => res.json(dbPostData))
       .catch(err => {
