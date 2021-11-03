@@ -1,4 +1,4 @@
-async function viewYourPostsHandler(event) {
+async function viewYourListingsHandler(event) {
     event.preventDefault();
 
     const title = document.querySelector('#post-title').value.trim();
@@ -59,5 +59,5 @@ async function newListingFormHandler(event) {
     }
 }
 
-document.querySelector('#view-your-listings').addEventListener('click', viewYourPostsHandler);
+document.querySelector('#view-your-listings').addEventListener('click', viewYourListingsHandler);
 document.querySelector('#new-mylisting').addEventListener('click', newListingFormHandler);
