@@ -2,54 +2,49 @@
 
 // const purchasedData = [
 //     {
-//         seller_username: 'jackjohnson',
-//         buyer_username: 'robthomas',
+//         seller_id: 1,
+//         buyer_id: 2,
 //         post_id: 1
 //     },
 //     {
-//         seller_username: 'robthomas',
-//         buyer_username: 'apriloneal',
+//         seller_id: 2,
+//         buyer_id: 3,
 //         post_id: 2
 //     },
 //     {
-//         seller_username: 'apriloneal',
-//         buyer_username: 'austinewell',
+//         seller_id: 3,
+//         buyer_id: 4,
 //         post_id: 3
 //     },
 //     {
-//         seller_username: 'austinewell',
-//         buyer_username: 'emmanuelgarcia',
+//         seller_id: 4,
+//         buyer_id: 5,
 //         post_id: 4
 //     },
 //     {
-//         seller_username: 'emmanuelgarcia',
-//         buyer_username: 'josepina',
+//         seller_id: 5,
+//         buyer_id: 6,
 //         post_id: 5
 //     },
 //     {
-//         seller_username: 'josepina',
-//         buyer_username: 'billmurray',
+//         seller_id: 6,
+//         buyer_id: 7,
 //         post_id: 6
 //     },
 //     {
-//         seller_username: 'billmurray',
-//         buyer_username: 'test1',
+//         seller_id: 7,
+//         buyer_id: 8,
 //         post_id: 7
 //     },
 //     {
-//         seller_username: 'test1',
-//         buyer_username: 'test2',
+//         seller_id: 8,
+//         buyer_id: 9,
 //         post_id: 8
 //     },
 //     {
-//         seller_username: 'test2',
-//         buyer_username: 'test3',
+//         seller_id: 9,
+//         buyer_id: 10,
 //         post_id: 9
-//     },
-//     {
-//         seller_username: 'test3',
-//         buyer_username: 'test1',
-//         post_id: 10
 //     },
 // ];
 

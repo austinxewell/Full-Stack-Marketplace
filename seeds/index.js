@@ -25,24 +25,19 @@ const seedAll = async () => {
     } catch(err) {
         console.log(err);
     };
-    // try {
-    // await seedPurchased();
-    // console.log('\n---------PURCHASED SEEDED-----------\n');
-    // } catch(err) {
-    //     console.log(err);
-    // };
-    // try {
-    // await seedReview();
-    // console.log('\n---------REVIEW SEEDED-----------\n');
-    // } catch(err) {
-    //     console.log(err);
-    // };
-    // try {
-    // await seedMyListing();
-    // console.log('\n---------MYLISTING SEEDED-----------\n');
-    // } catch(err) {
-    //     console.log(err);
-    // };
+//    try {
+//    await seedPurchased();
+//    console.log('\n---------PURCHASED SEEDED-----------\n');
+//    } catch(err) {
+//         console.log(err);
+//     };
+//     try {
+//     await seedReview();
+//     console.log('\n---------REVIEW SEEDED-----------\n');
+//     } catch(err) {
+//         console.log(err);
+//     };
+//     console.log('\n----------ALL TABLES SEEDED----------\n');
     process.exit(0);
 };
 

@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
       // use ID from the session
       user_id: req.session.user_id,
     },
-    attributes: ["id", "title", "price", "shipping", "shipping_info", "description", "picture_url"],
+    attributes: ["id", "title", "price", "shipping", "description", "picture_url"],
     include: [
       {
         model: User,
@@ -35,14 +35,14 @@ router.get('/edit/:id', (req, res) => {
             'title',
             'price',
             'shipping',
-            'shipping_info',
             'description',
             'picture_url'
         ],
         include: [
             {
                 model: User,
-                attributes: ['username']
+                attributes: ['username'],
+                display_as: 'seller_username'
             }
         ]
     })

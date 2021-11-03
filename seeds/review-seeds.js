@@ -2,64 +2,49 @@
 
 // const reviewData = [
 //     {
-//         seller_username: 'jackjohnson',
+//         seller_id: 1,
 //         buyer_review: 'This is pretty cool, thanks Jack!',
-//         buyer_username: 'robthomas',
-//         post_title: 1
+//         buyer_id: 2,
 //     },
 //     {
-//         seller_username: 'robthomas',
+//         seller_id: 2,
 //         buyer_review: 'This is pretty cool, thanks Jack!',
-//         buyer_username: 'apriloneal',
-//         post_title: 2
+//         buyer_id: 3,
 //     },
 //     {
-//         seller_username: 'apriloneal',
+//         seller_id: 3,
 //         buyer_review: 'This is pretty cool, thanks Jack!',
-//         buyer_username: 'austinewell',
-//         post_title: 3
+//         buyer_id: 4,
 //     },
 //     {
-//         seller_username: 'austinewell',
+//         seller_id: 4,
 //         buyer_review: 'This is pretty cool, thanks Jack!',
-//         buyer_username: 'emmanuelgarcia',
-//         post_title: 4
+//         buyer_id: 5,
 //     },
 //     {
-//         seller_username: 'emmanuelgarcia',
+//         seller_id: 5,
 //         buyer_review: 'This is pretty cool, thanks Jack!',
-//         buyer_username: 'josepina',
-//         post_title: 5
+//         buyer_id: 6,
 //     },
 //     {
-//         seller_username: 'josepina',
+//         seller_id: 6,
 //         buyer_review: 'This is pretty cool, thanks Jack!',
-//         buyer_username: 'billmurray',
-//         post_title: 6
+//         buyer_id: 7,
 //     },
 //     {
-//         seller_username: 'billmurray',
+//         seller_id: 7,
 //         buyer_review: 'This is pretty cool, thanks Jack!',
-//         buyer_username: 'test1',
-//         post_title: 7
+//         buyer_id: 8,
 //     },
 //     {
-//         seller_username: 'test1',
+//         seller_id: 8,
 //         buyer_review: 'This is pretty cool, thanks Jack!',
-//         buyer_username: 'test2',
-//         post_title: 8
+//         buyer_id: 9,
 //     },
 //     {
-//         seller_username: 'test2',
+//         seller_id: 9,
 //         buyer_review: 'This is pretty cool, thanks Jack!',
-//         buyer_username: 'test3',
-//         post_title: 9
-//     },
-//     {
-//         seller_username: 'test3',
-//         buyer_review: 'This is pretty cool, thanks Jack!',
-//         buyer_username: 'test1',
-//         post_title: 10
+//         buyer_id: 10,
 //     },
 // ];
 

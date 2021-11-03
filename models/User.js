@@ -46,14 +46,16 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        // this means the password must be at least four characters long
-        len: [4],
+        len: [8],
+        // is: [/^[a-z]+$/i],
+        // msg: "Passwords must be a minimum of 8 characters in length."
       },
     },
     // TODO: need to make it so the end user can enter money and use it to purchase Listings
     money: {
       type: DataTypes.INTEGER,
       allowNull: true,
+      defaultValue: 100,
     },
   },
   {
