@@ -2,17 +2,10 @@ const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const { Post, User } = require('../../models');
 const withAuth = require('../../utils/auth');
-const path = require('path');
 
 require('dotenv').config();
-
 var cloudinary = require('cloudinary').v2;
-// cloudinary.config({
-//    cloud_name: process.env.CLOUD_NAME,
-//    api_key: process.env.API_KEY,
-//    api_secret: process.env.API_SECRET,
-//    secure: true,
-// });
+
 
 // get all posts
 router.get('/', (req, res) => {
@@ -65,14 +58,10 @@ router.post('/', withAuth, (req, res) =>
    const NO_IMAGE_URL =
       'https://res.cloudinary.com/joseepina/image/upload/v1635966743/istockphoto-922962354-170667a_ys4tsk.jpg';
    const file = req.files ? '/marketplace/images/' + req.files.item_img.name : ''; // GETS the file from front-end
-   console.log('~ file', file);
-   let filePath = '';
 
    if (file) {
       cloudinary.uploader.upload(file, function (error, result) {
          if (!error) {
-            console.log(result);
-            console.log('~ FILEPATH ON UPLOAD SUCESS: ', result.secure_url);
             Post.create({
                title: req.body.item_title,
                price: req.body.item_price,
@@ -82,23 +71,17 @@ router.post('/', withAuth, (req, res) =>
                user_id: req.session.user_id,
             })
                .then((dbPostData) => {
-                  console.log('CREATED RECORD/UPLOAD FILE');
                   return res.json(dbPostData);
-                  // res.render('homepage', { loggedIn: true });
                })
                .catch((err) => {
                   console.log(err);
                   res.status(500).json(err);
                });
-
-            //res.cloudinary.com/joseepina/image/upload/v1635966743/istockphoto-922962354-170667a_ys4tsk.jpg
          } else {
-            console.log('ERROR IN CLOUDINARY.IPLOADER.UPLOAD()', error);
-            res.status(500).json({ message: 'ERROR IN CLOUDINARY.IPLOADER.UPLOAD()', error: error });
+            res.status(500).json({ message: 'Error in cloudinary upload.', error: error });
          }
       });
    } else {
-      console.log('~ FILEPATH BEFORE no image: ', NO_IMAGE_URL);
       Post.create({
          title: req.body.item_title,
          price: req.body.item_price,
@@ -108,9 +91,7 @@ router.post('/', withAuth, (req, res) =>
          user_id: req.session.user_id,
       })
          .then((dbPostData) => {
-            console.log('CREATED NO IMAGE RECORD/UPLOAD FILE');
             return res.json(dbPostData);
-            // res.render('homepage', { loggedIn: true });
          })
          .catch((err) => {
             console.log(err);
