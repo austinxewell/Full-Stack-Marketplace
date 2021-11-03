@@ -1,6 +1,6 @@
 async function addMoney() {
     const response = await fetch(`/api/users/`, {
-        method: 'GET',
+        method: 'PUT',
         headers: { 'Content-Type': 'application/json' }
     });
 
