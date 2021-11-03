@@ -18,7 +18,7 @@ const { User, Post } = require("../../models");
 
   router.put("/subtract", (req,res) => {
     User.decrement({
-      money: Post.req.body.price
+      money: 35
     },
     {
       where: {
