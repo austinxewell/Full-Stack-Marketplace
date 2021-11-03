@@ -28,7 +28,7 @@
 
 <section>
    <h2>Create New Post</h2>
-   <form class='new-post-form' id='new-post-form' enctype='multipart/form-data' method='POST' action='/api/posts'>
+   <form class='new-post-form' name="new-post-form" id="new-post-form" enctype="multipart/form-data">
       <!-- Add Img section -->
       <div id='new-post-form' class='column is-full border mb-2 has-background-light'>
          <div class='columns'>
@@ -45,11 +45,11 @@
                   name='item_price'
                   placeholder=' Price of Item:'
                >{{post-price}}</textarea>
-               {{! <label>Shipping: </label>
-                    <select class="dropdown $dropdown-item-active-color"> Shipping: 
+                <label>Shipping: </label>
+                    <select class="dropdown $dropdown-item-active-color" name="item_shipping"> Shipping: 
                         <option value="true">Yes</option>
                         <option value="false">No</option>
-                    </select> }}
+                    </select>
                <input type='file' id='item_img' name='item_img' />
             </div>
             <!-- Text area for description -->
@@ -69,5 +69,5 @@
    </form>
 </section>
 
-{{! <script src="/javascript/add-post.js"></script>  }}
+<script src='/javascript/add-post.js'></script>
 <script src='/javascript/logout.js'></script>
