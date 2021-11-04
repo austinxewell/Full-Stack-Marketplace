@@ -2,6 +2,10 @@ const router = require('express').Router();
 const { Post, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+require('dotenv').config();
+var cloudinary = require('cloudinary').v2;
+
+
 // get all posts
 router.get('/', (req, res) => {
    console.log('=======================');
@@ -46,45 +50,53 @@ router.get('/:id', (req, res) => {
 });
 
 // CREATE a POST
-router.post('/', (req, res) => {
-   console.log('creating item: ');
-   // path to root directory + public/images folder
-   let path = process.cwd() + '/public/images/';
+router.post('/', withAuth, (req, res) =>
+{
+   const NO_IMAGE_URL =
+      'https://res.cloudinary.com/joseepina/image/upload/v1635966743/istockphoto-922962354-170667a_ys4tsk.jpg';
+   const file = req.files ? '/marketplace/images/' + req.files.item_img.name : ''; // GETS the file from front-end
 
-   let file = ''; // declare file
-
-   if (req.files) {
-      // * Accessing the file by the <input> File name="item_img"
-      file = req.files.item_img;
-      path += file.name;
-   } else {
-      path += 'not_available.png';
-   }
-
-   Post.create({
-      title: req.body.item_title,
-      price: req.body.item_price,
-      shipping: req.body.item_shipping,
-      description: req.body.item_description,
-      picture_url: path,
-      seller_id: req.session.user_id,
-   })
-      .then((dbPostData) => {
-         if (file) {
-            // * move file to new directory in server with: mv(path, CB function(err))
-            file.mv(path, (err) => {
-               if (err) {
-                  return res.status(500).json(err);
-               }
-               return res.send({ status: 'success', path: path });
-            });
+   if (file) {
+      cloudinary.uploader.upload(file, function (error, result) {
+         if (!error) {
+            Post.create({
+               title: req.body.item_title,
+               price: req.body.item_price,
+               shipping: req.body.item_shipping,
+               description: req.body.item_description,
+               picture_url: result.secure_url,
+               user_id: req.session.user_id,
+               //seller_id: req.session.user_id,
+            })
+               .then((dbPostData) => {
+                  return res.json(dbPostData);
+               })
+               .catch((err) => {
+                  console.log(err);
+                  res.status(500).json(err);
+               });
+         } else {
+            res.status(500).json({ message: 'Error in cloudinary upload.', error: error });
          }
-         // res.render('homepage', { loggedIn: true });
-      })
-      .catch((err) => {
-         console.log(err);
-         res.status(500).json(err);
       });
+   } else {
+      Post.create({
+         title: req.body.item_title,
+         price: req.body.item_price,
+         shipping: req.body.item_shipping,
+         description: req.body.item_description,
+         picture_url: NO_IMAGE_URL,
+         user_id: req.session.user_id,
+         // seller_id: req.session.user_id,
+      })
+         .then((dbPostData) => {
+            return res.json(dbPostData);
+         })
+         .catch((err) => {
+            console.log(err);
+            res.status(500).json(err);
+         });
+   }
 });
 
 router.put('/:id', withAuth, (req, res) => {

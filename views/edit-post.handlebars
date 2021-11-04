@@ -29,7 +29,7 @@
 <section>
    <h2 class="is-size-2 is-underlined has-text-white ml-3">Create New Listing</h2>
    <br>
-   <form class='new-post-form'>
+   <form class='new-post-form' name="new-post-form" id="new-post-form" enctype="multipart/form-data">
       <!-- Add Img section -->
       <div class='column is-full border mb-2 has-background-light'>
          <div class='columns'>
@@ -51,7 +51,7 @@
                >{{price}}</textarea>
                <br>
                <label>Shipping: </label>
-                    <select id="post-shipping" class="dropdown"> Shipping: 
+                    <select id="post-shipping" class="dropdown" name="item_shipping"> Shipping: 
                         <option value="true">Yes</option>
                         <option value="false">No</option>
                     </select>
@@ -74,5 +74,6 @@
    </form>
 </section>
 
+{{!-- <script src='/javascript/add-post.js'></script> --}}
 <script src='/javascript/logout.js'></script>
 <script src="/javascript/mylisting.js"></script>
