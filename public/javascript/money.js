@@ -7,7 +7,7 @@ async function addMoney(event) {
     });
 
     if (response.ok) {
-        alert('We have depostited 100 into your account!');
+        alert(`We have depostited 100 into your account!`);
     } else {
         alert(response.statusText);
     }

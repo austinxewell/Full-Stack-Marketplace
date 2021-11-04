@@ -9,7 +9,8 @@ async function subtractMoney(event) {
     if (response.ok) {
         alert('We have subtracted 35 from your account!');
     } else {
-        alert(response.statusText);
+        // alert(response.statusText);
+        alert('You must be logged in in order to purchase an item. Please log in or create an account.')
     }
 };
 

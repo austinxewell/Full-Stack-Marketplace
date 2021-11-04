@@ -15,7 +15,8 @@ async function loginFormHandler(event) {
     });
 
         if (response.ok) {
-            alert('Please Navigate to the home page by clicking "home".')
+            // alert('Please Navigate to the home page by clicking "home".')
+            document.location.replace('/dashboard/');
         } else {
             alert(response.statusText);
         }
@@ -42,7 +43,8 @@ async function signupFormHandler(event) {
 
         // check the response status
         if (response.ok) {
-            alert('Please Navigate to the home page by clicking "home".')
+            // alert('Please Navigate to the home page by clicking "home".')
+            document.location.replace('/dashboard/');
         } else {
             alert(response.statusText);
         }
