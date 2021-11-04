@@ -1,15 +1,15 @@
 <!--Header/Navbar-->
     <nav class="navbar has-background-light mb-5" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <img src="../public/images/marketplace placeholder.png" alt="Full Stack Marketplace Logo" style="width: 300px; height: 100px;">            
+            <img src="/images/marketplace placeholder.png" alt="Full Stack Marketplace Logo" style="width: 300px; height: 100px;">            
         </div>    
         <div class="navbar-end">
             <div class="navbar-item">
                 <div class="buttons">
-                    <a class="button is-light">Home</a>
-                    <a class="button is-light">Dashboard</a>
-                    <a class="button is-light">New Listing</a>
-                    <a id="sign-up" class="button is-info"><strong>Logout</strong></a>
+                    <a href="/" class="button is-light">Home</a>
+                    <a href="/dashboard" class="button is-light">Dashboard</a>
+                    <a href="/mylisting" class="button is-light">New Listing</a>
+                    <a id="logout" class="button is-info"><strong>Logout</strong></a>
                 </div>
             </div>
         </div>
@@ -17,9 +17,10 @@
 
     <!-- Body -->
     <!-- Buyers Username text -->
+    <h2 class="is-size-2 is-underlined has-text-white ml-3">Reviews</h2>
     <div class="columns">
         <div class="column is-10">
-            <p class="is-size-2 ml-3 has-text-white">"Buyer's Username":</p>
+            <p class="is-size-3 ml-3 has-text-white">"Buyer's Username":</p>
         </div>
     </div>
 
@@ -48,3 +49,5 @@
             </div>
         </div>
     </div>
+
+<script src="/javascript/logout.js"></script>
