@@ -70,8 +70,7 @@ router.post('/', withAuth, (req, res) => {
    console.log('inside POST create');
    const NO_IMAGE_URL =
       'https://res.cloudinary.com/joseepina/image/upload/v1635966743/istockphoto-922962354-170667a_ys4tsk.jpg';
-   const file = req.files ? req.files.item_img.name : ''; // GETS the file from front-end
-   // const file = req.files ? '/marketplace/images/' + req.files.item_img.name : ''; // GETS the file from front-end
+   const file = req.files ? '/marketplace/images/' + req.files.item_img.name : ''; // GETS the file from front-end
    console.log('inside file', file);
    if (file) {
       cloudinary.uploader.upload(file, function (error, result) {
