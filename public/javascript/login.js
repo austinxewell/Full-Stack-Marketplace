@@ -15,7 +15,7 @@ async function loginFormHandler(event) {
     });
 
         if (response.ok) {
-            document.location.replace('/dashboard');
+            alert('Please Navigate to the home page by clicking "home".')
         } else {
             alert(response.statusText);
         }
@@ -42,7 +42,7 @@ async function signupFormHandler(event) {
 
         // check the response status
         if (response.ok) {
-            alert('Your account has been created, please login.')
+            alert('Please Navigate to the home page by clicking "home".')
         } else {
             alert(response.statusText);
         }

@@ -1,5 +1,7 @@
 const seedUsers = require('./user-seeds');
 const seedPosts = require('./post-seeds');
+const seedPurchased = require('./purchased-seeds');
+const seedReview = require('./review-seeds');
 
 const sequelize = require('../config/connection');
 
@@ -22,11 +24,19 @@ const seedAll = async () => {
     } catch(err) {
         console.log(err);
     };
-    // Add more seeds as needed
-    // await seedProducts();
-    // console.log('\n----- PRODUCTS SEEDED -------\n);
-    // and so on and so forth
-
+    try {
+    await seedPurchased();
+    console.log('\n---------PURCHASED SEEDED-----------\n');
+    } catch(err) {
+         console.log(err);
+     };
+     try {
+    await seedReview();
+     console.log('\n---------REVIEW SEEDED-----------\n');
+     } catch(err) {
+         console.log(err);
+     };
+     console.log('\n----------ALL TABLES SEEDED----------\n');
     process.exit(0);
 };
 

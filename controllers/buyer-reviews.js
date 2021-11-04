@@ -1,11 +1,7 @@
 const router = require("express").Router();
 
 router.get("/", (req, res) => {
-
-    res.render("edit-post");
+    res.render("buyer-reviews");
   });
 
-
-
   module.exports = router;
-
