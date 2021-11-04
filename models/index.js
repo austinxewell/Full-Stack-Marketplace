@@ -14,7 +14,7 @@ Post.belongsTo(User, {
 });
 
 Purchased.belongsTo(User, {
-  foreignKey: 'buyer_id'
+  foreignKey: 'user_id'
 });
 
 Purchased.belongsTo(Post, {
@@ -22,7 +22,7 @@ Purchased.belongsTo(Post, {
 });
 
 User.hasMany(Review, {
-  foreignKey: 'buyer_id'
+  foreignKey: 'user_id'
 });
 
 Review.belongsTo(Post, {

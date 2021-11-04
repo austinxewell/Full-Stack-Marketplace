@@ -46,7 +46,7 @@ router.get('/:id', (req, res) => {
 });
 
 // CREATE a POST
-router.post('/', withAuth, (req, res) => {
+router.post('/', (req, res) => {
    console.log('creating item: ');
    // path to root directory + public/images folder
    let path = process.cwd() + '/public/images/';
@@ -67,7 +67,7 @@ router.post('/', withAuth, (req, res) => {
       shipping: req.body.item_shipping,
       description: req.body.item_description,
       picture_url: path,
-      user_id: req.session.user_id,
+      seller_id: req.session.user_id,
    })
       .then((dbPostData) => {
          if (file) {

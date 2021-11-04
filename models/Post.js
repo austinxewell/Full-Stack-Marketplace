@@ -12,14 +12,6 @@ Post.init(
          primaryKey: true,
          autoIncrement: true,
       },
-      seller_id: {
-         type: DataTypes.INTEGER,
-         allowNull: false,
-         references: {
-            model: 'user',
-            key: 'id'
-         }
-      },
       title: {
          type: DataTypes.STRING,
          allowNull: false,
@@ -41,6 +33,14 @@ Post.init(
          // * to be included in post object.
          type: DataTypes.STRING,
          allowNull: false,
+      },
+      seller_id: {
+         type: DataTypes.INTEGER,
+         allowNull: false,
+         references: {
+            model: 'user',
+            key: 'id'
+         }
       },
    },
    {

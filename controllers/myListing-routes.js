@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { User, Post, Purchased, Review } = require("../models");
-const withAuth = require("../utils/auth");
+//const withAuth = require("../utils/auth");
 
 
 router.get("/", (req, res) => {
@@ -8,49 +8,31 @@ router.get("/", (req, res) => {
 });
 
 
-// Find user by id and include their Listings
-router.get("/:id", (req, res) => {
-  User.findOne({
-    attributes: { exclude: ["password"] },
-    where: {
-      loggedIn: req.session.loggedIn,
-      id: req.params.id, // Maybe some kind of // loggedIn: req.session.loggedIn // to obtain the posts related to the user and their ID?
+// Find user by logged in session and include their Listings
+router.get("/mylisting", (req, res) => {
+  Post.findAll({
+    include: {
+      model: User,
+      attributes: ['username'],
     },
-    include: [
-      {
-        model: Post,
-        attributes: ["sellers_id"],
-        include: {
-          model: User,
-          attributes: ["user_id"],
-        },
-      },
-      {
-        model: Post,
-        attributes: ["post_id"],
-        include: {
-          model: Purchased,
-          attributes: ["buyers_id"],
-        },
-      },
-    ],
+    where: {
+      user_id: req.session.user_id
+    },
   })
-    .then((dbUserData) => {
-      if (!dbUserData) {
-        res.status(404).json({ message: "No user found with this id" });
-        return;
-      }
-      res.json(dbUserData);
-    })
+    .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
-    });
+    })
+    .then(res.render('mylistings', {
+      posts,
+      logged_in: req.session.logged_in,
+    }));
 });
 
 
 // Create a Listing
-router.post("/", withAuth, (req, res) => {
+router.post("/", (req, res) => {
   Post.create({
     title: req.body.title,
     price: req.body.price,
