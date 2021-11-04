@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require("../../models");
+const { User, Post } = require("../../models");
 
   router.put("/add", (req,res) => {
     User.increment({
@@ -14,6 +14,21 @@ const { User } = require("../../models");
       console.log(err);
       res.status(500).json(err);
     });
-  })
+  });
+
+  router.put("/subtract", (req,res) => {
+    User.decrement({
+      money: 35
+    },
+    {
+      where: {
+        id: req.session.user_id
+      }
+    }).then(dbUserData => res.json(dbUserData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+  });
 
   module.exports = router;

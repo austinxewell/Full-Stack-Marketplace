@@ -29,9 +29,9 @@
 <section>
    <h2 class="is-size-2 is-underlined has-text-white ml-3">Create New Listing</h2>
    <br>
-   <form class='new-post-form' id='new-post-form' enctype='multipart/form-data' method='POST' action='/api/posts'>
+   <form class='new-post-form' name="new-post-form" id="new-post-form" enctype="multipart/form-data">
       <!-- Add Img section -->
-      <div id='new-post-form' class='column is-full border mb-2 has-background-light'>
+      <div class='column is-full border mb-2 has-background-light'>
          <div class='columns'>
             <div class='column is-2 borderRight'>
                <input type='file' id='item_img' name='item_img' class="fileBottom" />
@@ -42,29 +42,30 @@
                   class='textAreaInfo'
                   name='item_title'
                   placeholder=' Title of Item:'
-               >{{post-title}}</textarea>
+               >{{title}}</textarea>
                <textarea
                   id='post-price'
                   class='textAreaInfo'
                   name='item_price'
                   placeholder=' Price of Item:'
-               >{{post-price}}</textarea>
+               >{{price}}</textarea>
                <br>
                <label>Shipping: </label>
-                    <select class="dropdown"> Shipping: 
+                    <select id="post-shipping" class="dropdown" name="item_shipping"> Shipping: 
                         <option value="true">Yes</option>
                         <option value="false">No</option>
                     </select>
             </div>
             <!-- Text area for description -->
             <textarea
+               id="post-description"
                class='column is-6 borderRight'
                name='item_description'
                placeholder=' Description of Item:'
-            >{{post-desciption}}</textarea>
+            >{{desciption}}</textarea>
             {{! submit button }}
             <div class='column is-2'>
-               <button type='submit' class='button is-info'>
+               <button id='new-mylisting' class='button is-info'>
                   <strong>Submit</strong>
                </button>
             </div>
@@ -73,5 +74,6 @@
    </form>
 </section>
 
-{{! <script src="/javascript/add-post.js"></script>  }}
+{{!-- <script src='/javascript/add-post.js'></script> --}}
 <script src='/javascript/logout.js'></script>
+<script src="/javascript/mylisting.js"></script>
