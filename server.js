@@ -7,8 +7,8 @@ const session = require('express-session');
 // added to use handlebars for html
 const exphbs = require('express-handlebars');
 
-//* import new fileupload tool.
-// const fileUpload = require('express-fileupload');
+// * import new fileupload tool.
+const fileUpload = require('express-fileupload');
 
 // Express
 const app = express();
