@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post, Purchased, Review } = require('../models');
+const { User, Post, Purchased } = require('../models');
 const withAuth = require('../utils/auth');
 
 require('dotenv').config();
@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
 });
 
 // Find user by id and include their posts
-router.get('/:id', (req, res) => {
+router.get('/:id', withAuth, (req, res) => {
    User.findByPk({
       attributes: { exclude: ['password'] },
       where: {
