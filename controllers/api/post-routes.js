@@ -5,7 +5,6 @@ const withAuth = require('../../utils/auth');
 require('dotenv').config();
 var cloudinary = require('cloudinary').v2;
 
-
 // get all posts
 router.get('/', (req, res) => {
    console.log('=======================');
@@ -50,8 +49,9 @@ router.get('/:id', (req, res) => {
 });
 
 // CREATE a POST
-router.post('/', withAuth, (req, res) =>
-{
+router.post('/', withAuth, (req, res) => {
+   console.log('~~~INSIDE POST-ROUTES.JS  POST CREATE');
+   console.log('req.files', req.files);
    const NO_IMAGE_URL =
       'https://res.cloudinary.com/joseepina/image/upload/v1635966743/istockphoto-922962354-170667a_ys4tsk.jpg';
    const file = req.files ? '/marketplace/images/' + req.files.item_img.name : ''; // GETS the file from front-end

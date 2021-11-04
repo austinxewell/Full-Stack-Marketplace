@@ -6,6 +6,7 @@ async function newListingFormHandler(event) {
    const form = document.querySelector('.new-post-form');
    const formData = new FormData(form);
 
+   console.log('item_img: ', formData.get('item_img'));
    const response = await fetch(`/api/posts`, {
       method: 'POST',
       body: formData,
