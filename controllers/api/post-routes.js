@@ -66,7 +66,7 @@ router.post('/', withAuth, (req, res) =>
                description: req.body.item_description,
                picture_url: result.secure_url,
                user_id: req.session.user_id,
-               seller_id: req.session.user_id,
+               //seller_id: req.session.user_id,
             })
                .then((dbPostData) => {
                   return res.json(dbPostData);
@@ -87,7 +87,7 @@ router.post('/', withAuth, (req, res) =>
          description: req.body.item_description,
          picture_url: NO_IMAGE_URL,
          user_id: req.session.user_id,
-         seller_id: req.session.user_id,
+         // seller_id: req.session.user_id,
       })
          .then((dbPostData) => {
             return res.json(dbPostData);
