@@ -1,11 +1,11 @@
 const url = 'https://api.cloudinary.com/v1_1/joseepina/image/upload';
 const form = document.querySelector('.new-post-form');
-const NO_IMAGE_URL =
-   'https://res.cloudinary.com/joseepina/image/upload/v1635966743/istockphoto-922962354-170667a_ys4tsk.jpg';
+const NO_IMAGE_URL = 
+'https://res.cloudinary.com/joseepina/image/upload/v1635966743/istockphoto-922962354-170667a_ys4tsk.jpg';
 
 form.addEventListener('submit', (event) => {
    event.preventDefault();
-
+   const formData = new FormData(form);
    const file = document.querySelector('#item_img').files[0];
    if (file) {
       const formFileData = new FormData();
@@ -19,7 +19,6 @@ form.addEventListener('submit', (event) => {
             return response.json();
          })
          .then((data) => {
-            const formData = new FormData(form);
             formData.append('secure_url', data.secure_url);
             fetch(`/api/posts`, {
                method: 'POST',
@@ -33,7 +32,6 @@ form.addEventListener('submit', (event) => {
             });
          });
    } else {
-      const formData = new FormData(form);
       formData.append('secure_url', NO_IMAGE_URL);
       fetch(`/api/posts`, {
          method: 'POST',
