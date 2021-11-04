@@ -1,9 +1,8 @@
-// import all models
 const Post = require('./Post');
 const User = require('./User');
-// const Purchased = require('./Purchased');
-// const Review = require('./Review');
-// const MyListing = require('./MyListing');
+const Review = require("./Review");
+const Purchased = require("./Purchased");
+
 
 // create associations
 User.hasMany(Post, {
@@ -14,5 +13,20 @@ Post.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
+Purchased.belongsTo(User, {
+  foreignKey: 'buyer_id'
+});
 
-module.exports = { User, Post } //need to add Purchased, Review, & MyListing once available
+Purchased.belongsTo(Post, {
+  foreignKey: 'post_id'
+});
+
+User.hasMany(Review, {
+  foreignKey: 'buyer_id'
+});
+
+Review.belongsTo(Post, {
+  foreignKey: 'post_id'
+});
+
+module.exports = { User, Post, Purchased, Review };

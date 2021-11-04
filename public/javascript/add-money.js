@@ -1,11 +1,11 @@
 async function addMoney() {
-    const response = await fetch(`/api/users/`, {
+    const response = await fetch(`/api/money/add`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' }
     });
 
     if (response.ok) {
-        document.location.replace('/');
+        alert(`We have depostited 100 into your account!`)
     } else {
         alert(response.statusText);
     }

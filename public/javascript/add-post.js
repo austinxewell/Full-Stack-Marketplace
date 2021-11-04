@@ -28,7 +28,7 @@ async function newFormHandler(event) {
     });
 
     if (response.ok) {
-        document.location.replace('/mylisting');
+        document.location.replace('/dashboard');
     } else {
         alert('Your item was not submitted!');
     }
