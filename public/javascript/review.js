@@ -1,44 +1,30 @@
-// async function newReviewFormHandler(event) {
-//   event.preventDefault();
+async function reviewFormHandler(event) {
+  event.preventDefault();
 
-//   console.log("INSIDE LISTENER ---- ");
+  const review_text = document.querySelector('textarea[name="buyers_review-body]').value.trim();
+  const sellers_id = window.location.toString().split('/')[
+    window.location.toString().split('/').length - 1
+  ];
 
-//   const form = document.querySelector("#new-review-form");
-//   const formData = new FormData(form);
-
-//   const response = await fetch(`/api/buyer-reviews`, {
-//     method: "POST",
-//     body: formData,
-//   });
-//   if (response.ok) {
-//     document.location.replace("/buyer_reviews");
-//   } else {
-//     alert("Your review was not submitted!");
-//   }
-// }
-
-// document.querySelector("#new-review-form").addEventListener("submit", newListingFormHandler);
-
-async function newReviewHandler(event) {
-    event.preventDefault();
-  
-    const buyer_review = document.querySelector("#new-review");
-  
-    const response = await fetch(`/api/buyer-reviews`, {
-      method: "POST",
-      body: buyer_review,
-      headers: { "Content-Type": "application/json" },
+  if (review_text) {
+    const response = await fetch('/api/buyer_reviews', {
+      method: 'POST',
+      body: JSON.stringify({
+        sellers_id,
+        review_text,
+        buyers_id
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
     });
-  
+
     if (response.ok) {
-      alert("Review added to purchased listing!");
-      //document.location.replace('/dashboard/');  Maybe something like this?
+      document.location.reload();
     } else {
-      console.log(err);
-      alert("Your review was not submitted!");
+      alert(response.statusText);
     }
   }
-  
-  document
-    .querySelector("#new-review")
-    .addEventListener("submit", newReviewHandler);
+}
+
+document.querySelector('#review-form').addEventListener('submit', reviewFormHandler);

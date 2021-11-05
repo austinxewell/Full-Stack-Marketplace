@@ -53,7 +53,7 @@ router.post('/', withAuth, (req, res) => {
       shipping: req.body.item_shipping,
       description: req.body.item_description,
       picture_url: req.body.secure_url,
-      sellers__id: req.session.user_id,
+      sellers_id: req.session.user_id,
       //seller_id: req.session.user_id,
    })
       .then((dbPostData) => {

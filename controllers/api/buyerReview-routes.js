@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Review, User, Purchased } = require("../../models");
+const { Review, User, Purchased, Post } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 router.post("/api/buyer-reviews", withAuth, (req, res) => {
@@ -17,9 +17,14 @@ router.post("/api/buyer-reviews", withAuth, (req, res) => {
           attributes: ["username"],
         },
         {
+          model: Post,
+          attributes: ["sellers_id"],
+        },
+        {
           model: Purchased,
           where: {
             buyers_id: req.params.buyers_id,
+            post_id: req.params.post_id,
             user_id: req.session_user_id,
           },
           attributes: ["buyers_id", "post_id"],
@@ -60,6 +65,7 @@ router.get("/api/buyer-reviews", (req, res) => {
           model: Purchased,
           where: {
             buyers_id: req.params.buyers_id,
+            post_id: req.params.post_id,
             user_id: req.session_user_id,
           },
           attributes: ["buyers_id", "post_id"],

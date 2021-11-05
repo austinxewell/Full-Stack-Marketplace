@@ -15,4 +15,4 @@ async function subtractMoney(event) {
     }
 };
 
-document.querySelector('#purchase').addEventListener('click', subtractMoney);
+document.querySelector('.purchase-post').addEventListener('click', subtractMoney);
