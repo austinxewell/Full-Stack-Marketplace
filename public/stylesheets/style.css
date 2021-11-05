@@ -1,3 +1,6 @@
+* {
+  font-family: 'Varela Round', sans-serif;
+}
 .border {
   border-style: solid;
 }
@@ -34,5 +37,5 @@
 }
 
 h2 {
-  text-shadow: 1px 1px black
+  font-family: 'Vidaloka', serif;
 }

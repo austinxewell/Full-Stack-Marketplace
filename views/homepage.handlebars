@@ -10,13 +10,13 @@
                     <!-- Dashboard and New Listing will only be visiable when logged in -->
                     {{#if loggedIn}}
                     <a href="/dashboard" class="button is-light">
-                        Dashboard
+                        <span> Dashboard <i class="fas fa-tachometer-alt"></i></span>
                     </a>
                     <a href="/mylisting" class="button is-light">
-                        New Listing
+                        <span> New Listing <i class="fas fa-plus-circle"></i></span>
                     </a>
                     <a id="logout" class="button is-info">
-                        <strong>Logout</strong>
+                        <span><strong> Logout <i class="fas fa-sign-out-alt"></i></strong></span>
                     </a>
                     {{else}}
                     <!-- always visable -->
@@ -39,10 +39,10 @@
         {{> post-info post }}
                 <div class="column is-2">
                     <a id="purchase" class="button is-info mb-3">
-                        <strong>Purchase</strong>
+                        <span><strong>Purchase <i class="fas fa-shopping-cart"></i></strong></span>
                     </a>
                     <a href="/buyer-reviews" id="" class="button is-info">
-                        <strong>Reviews</strong>
+                        <span><strong>Reviews </strong><i class="fas fa-list"></i></span>
                     </a>
                 </div>
             </div>
