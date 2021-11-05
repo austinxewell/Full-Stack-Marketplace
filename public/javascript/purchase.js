@@ -1,4 +1,5 @@
 async function subtractMoney(event) {
+    console.log('inside')
     event.preventDefault();
     
     const response = await fetch(`/api/money/subtract`, {

@@ -2,10 +2,6 @@ const router = require('express').Router();
 const { Post, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-require('dotenv').config();
-var cloudinary = require('cloudinary').v2;
-
-
 // get all posts
 router.get('/', (req, res) => {
    console.log('=======================');
@@ -89,14 +85,9 @@ router.post('/', withAuth, (req, res) =>
          sellers_id: req.session.user_id,
          // seller_id: req.session.user_id,
       })
-         .then((dbPostData) => {
-            return res.json(dbPostData);
-         })
-         .catch((err) => {
-            console.log(err);
-            res.status(500).json(err);
-         });
-   }
+      .catch((err) => {
+         res.status(500).json({ message: 'Post.create() Failed.', err: err });
+      });
 });
 
 router.put('/:id', withAuth, (req, res) => {
