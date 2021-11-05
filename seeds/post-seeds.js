@@ -8,7 +8,8 @@ const postData = [
     description:
       "Please read this wonderful description of our newest Listing!",
     picture_url: "http://www.fillmurray.com/g/200/300",
-    seller_id: 1
+    sellers_id: 1,
+    user_id: 1
   },
   {
     title: "Listing Calm Cage",
@@ -17,7 +18,8 @@ const postData = [
     description:
       "Please read this wonderful description of our newest Listing!",
     picture_url: "https://www.placecage.com/200/300",
-    seller_id: 2
+    sellers_id: 2,
+    user_id: 2
   },
   {
     title: "Listing Grey Cage",
@@ -26,7 +28,8 @@ const postData = [
     description:
       "Please read this wonderful description of our newest Listing!",
     picture_url: "https://www.placecage.com/g/200/300",
-    seller_id: 3
+    sellers_id: 3,
+    user_id: 3,
   },
   {
     title: "Listing Crazy Cage",
@@ -35,7 +38,8 @@ const postData = [
     description:
       "Please read this wonderful description of our newest Listing!",
     picture_url: "https://www.placecage.com/c/200/300",
-    seller_id: 4
+    sellers_id: 4,
+    user_id: 4
   },
   {
     title: "Listing Gif Cage",
@@ -44,7 +48,8 @@ const postData = [
     description:
       "Please read this wonderful description of our newest Listing!",
     picture_url: "https://www.placecage.com/gif/200/300",
-    seller_id: 5
+    sellers_id: 5,
+    user_id: 5
   },
   {
     title: "Listing Calm Steve",
@@ -53,7 +58,8 @@ const postData = [
     description:
       "Please read this wonderful description of our newest Listing!",
     picture_url: "https://www.stevensegallery.com/200/300",
-    seller_id: 6
+    sellers_id: 6,
+    user_id: 6
   },
   {
     title: "Listing Calm Murray",
@@ -62,7 +68,8 @@ const postData = [
     description:
       "Please read this wonderful description of our newest Listing!",
     picture_url: "http://www.fillmurray.com/200/300",
-    seller_id: 7
+    sellers_id: 7,
+    user_id: 7
   },
   {
     title: "Listing Grey Steve",
@@ -71,7 +78,8 @@ const postData = [
     description:
       "Please read this wonderful description of our newest Listing!",
     picture_url: "https://www.stevensegallery.com/g/200/300",
-    seller_id: 8
+    sellers_id: 8,
+    user_id: 8
   },
   {
     title: "Listing Fish Murray",
@@ -80,7 +88,8 @@ const postData = [
     description:
       "Please read this wonderful description of our newest Listing!",
     picture_url: "http://www.fillmurray.com/300/200",
-    seller_id: 9
+    sellers_id: 9,
+    user_id: 9
   },
   {
     title: "Listing Picaso Murray",
@@ -89,7 +98,8 @@ const postData = [
     description:
       "Please read this wonderful description of our newest Listing!",
     picture_url: "http://www.fillmurray.com/140/100",
-    seller_id: 10
+    sellers_id: 10,
+    user_id: 10
   },
 ];
 

@@ -1,17 +1,17 @@
 const router = require("express").Router();
-const { Post } = require("../../models");
+const { Post, Purchased } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 router.put("/:id", withAuth, (req, res) => {
    Post.update(
      {//really unsure of what to put here to sell the Listing // I assume it would need to be a put since new data will be assigned to it referencing the 
-     // buyer_username to tie back to the user purchasing the listing
+     // buyer_id to tie back to the user purchasing the listing
        title: req.body.title,
        price: req.body.price,
        shipping: req.body.shipping,
        description: req.body.description,
        picture_url: req.body.picture_url,
-       user_id: req.session.user_id,
+       sellers_id: req.session.user_id,
      },
      {
        where: {
@@ -31,5 +31,6 @@ router.put("/:id", withAuth, (req, res) => {
        res.status(500).json(err);
      });
 });
+
 
 module.exports = router;

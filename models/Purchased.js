@@ -1,5 +1,4 @@
 const { Model, DataTypes } = require("sequelize");
-const { User, Post } = require(".");
 const sequelize = require("../config/connection");
 
 class Purchased extends Model {}
@@ -17,18 +16,19 @@ Purchased.init(
       allowNull: false,
       as: "item_id",
       references: {
-        model: 'post',
-        key: 'id'
-      }
+        model: "post",
+        key: "id",
+      },
     },
-    user_id: {
+    buyers_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      reference: {
-        model: 'user',
-        key: 'id'
+      references: {
+        model: "user",
+        key: "id",
+        attributes: ['username']
       }
-    },
+    }
   },
   {
     sequelize,

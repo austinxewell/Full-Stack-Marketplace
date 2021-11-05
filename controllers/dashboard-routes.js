@@ -30,18 +30,10 @@ router.get("/", (req, res) => {
 
 router.get('/edit/:id', (req, res) => {
     Post.findByPk(req.params.id, {
-        attributes: [
-            'title',
-            'price',
-            'shipping',
-            'description',
-            'picture_url'
-        ],
         include: [
             {
                 model: User,
                 attributes: ['username'],
-                display_as: 'seller_username'
             }
         ]
     })

@@ -1,53 +1,53 @@
 const router = require('express').Router();
-const { User, Post, Purchased } = require('../models');
+const { Post } = require('../models');
 const withAuth = require('../utils/auth');
 
 require('dotenv').config();
 var cloudinary = require('cloudinary').v2;
 
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
    res.render('edit-post');
 });
 
-// Find user by id and include their posts
-router.get('/:id', withAuth, (req, res) => {
-   User.findByPk({
-      attributes: { exclude: ['password'] },
-      where: {
-         loggedIn: req.session.loggedIn,
-         id: req.params.id, // Maybe some kind of // loggedIn: req.session.loggedIn // to obtain the posts related to the user and their ID?
-      },
-      include: [
-         {
-            model: Post,
-            attributes: ['sellers_id'],
-            include: {
-               model: User,
-               attributes: ['user_id'],
-            },
-         },
-         {
-            model: Post,
-            attributes: ['post_id'],
-            include: {
-               model: Purchased,
-               attributes: ['buyers_id'],
-            },
-         },
-      ],
-   })
-      .then((dbUserData) => {
-         if (!dbUserData) {
-            res.status(404).json({ message: 'No user found with this id' });
-            return;
-         }
-         res.json(dbUserData);
-      })
-      .catch((err) => {
-         console.log(err);
-         res.status(500).json(err);
-      });
-});
+// // Find user by id and include their posts
+// router.get('/dashboard', withAuth, (req, res) => {
+//    User.findOne({
+//       attributes: { exclude: ['password'] },
+//       where: {
+//          loggedIn: req.session.loggedIn,
+//          id: req.params.id, // Maybe some kind of // loggedIn: req.session.loggedIn // to obtain the posts related to the user and their ID?
+//       },
+//       include: [
+//          {
+//             model: Post,
+//             attributes: ['sellers_id'],
+//             include: {
+//                model: User,
+//                attributes: ['user_id'],
+//             },
+//          },
+//          {
+//             model: Post,
+//             attributes: ['post_id'],
+//             include: {
+//                model: Purchased,
+//                attributes: ['buyers_id'],
+//             },
+//          },
+//       ],
+//    })
+//       .then((dbUserData) => {
+//          if (!dbUserData) {
+//             res.status(404).json({ message: 'No user found with this id' });
+//             return;
+//          }
+//          res.json(dbUserData);
+//       })
+//       .catch((err) => {
+//          console.log(err);
+//          res.status(500).json(err);
+//       });
+// });
 
 // // Create a Listing
 // router.post("/", withAuth, (req, res) => {
@@ -84,8 +84,8 @@ router.post('/', withAuth, (req, res) => {
                shipping: req.body.item_shipping,
                description: req.body.item_description,
                picture_url: result.secure_url,
-               user_id: req.session.user_id,
-               // * seller_id: req.session.user_id,
+               sellers_id: req.session.user_id,
+               // * sellers_id: req.session.user_id,
             })
                .then((dbPostData) => {
                   return res.json(dbPostData);
@@ -105,8 +105,8 @@ router.post('/', withAuth, (req, res) => {
          shipping: req.body.item_shipping,
          description: req.body.item_description,
          picture_url: NO_IMAGE_URL,
-         user_id: req.session.user_id,
-         // * seller_id: req.session.user_id,
+         sellers_id: req.session.user_id,
+         // * sellers_id: req.session.user_id,
       })
          .then((dbPostData) => {
             return res.json(dbPostData);
