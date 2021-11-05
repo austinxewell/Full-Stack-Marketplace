@@ -27,7 +27,6 @@
                 </div>
             </div>
         </div>
-        </div>
     </nav>
 
     <h2 class="is-size-2 is-underlined has-text-white ml-3">HomePage</h2>
@@ -37,17 +36,17 @@
     {{#each posts as |post|}}
     <li>
         {{> post-info post }}
-                <div class="column is-2">
-                    <a id="purchase" class="button is-info mb-3">
-                        <span><strong>Purchase <i class="fas fa-shopping-cart"></i></strong></span>
-                    </a>
-                    <a href="/buyer-reviews" id="" class="button is-info">
-                        <span><strong>Reviews </strong><i class="fas fa-list"></i></span>
-                    </a>
+                    <div class="column is-2">
+                        <a id="purchase" class="button is-info mb-3">
+                            <span><strong>Purchase <i class="fas fa-shopping-cart"></i></strong></span>
+                        </a>
+                        <a href="/buyer-reviews" id="" class="button is-info">
+                            <span><strong>Reviews </strong><i class="fas fa-list"></i></span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     </li>
     <br>
     {{/each}}
