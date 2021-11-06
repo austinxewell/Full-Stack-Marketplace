@@ -26,7 +26,8 @@ Purchased.init(
       references: {
         model: "user",
         key: "id",
-        attributes: ['username']
+        attributes: ['username'],
+        as: ['buyers_username']
       }
     }
   },

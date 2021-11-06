@@ -40,7 +40,8 @@ Post.init(
          references: {
             model: 'user',
             key: 'id',
-            attributes: ['username']
+            attributes: ['username'],
+            as: ['sellers_username']
          }
       },
    },

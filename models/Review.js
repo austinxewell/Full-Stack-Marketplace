@@ -27,7 +27,9 @@ Review.init(
        allowNull: false,
        references: {
          model: 'purchased',
-         key: 'id'
+         key: 'id',
+         attributes: ['username'],
+         as: ['buyers_username']
        }
      }
      
