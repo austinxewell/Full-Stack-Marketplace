@@ -1,6 +1,6 @@
 async function subtractMoney(event) {
    event.preventDefault();
-   console.log('subtractMoney is clicked');
+   // console.log('subtractMoney is clicked');
 
    const response = await fetch(`/api/money/subtract`, {
       method: 'PUT',
