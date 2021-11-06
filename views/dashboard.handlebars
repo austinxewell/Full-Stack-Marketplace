@@ -78,20 +78,14 @@
         {{#each posts as |post|}}
             <li>
                 {{> post-info post }}
-                    {{!-- <div class="column is-2"> --}}
-
-                        {{!-- <div class="column is-2">
-                        <a id="" class="button is-danger ">
-                            <span><strong>Delete  </strong><i class="fas fa-trash"></i></span>
-                        </a>
-                        </div> --}}
-                        <a name="delete" class="button is-danger ">
+                    <div class="column is-2">
+                        <a name="delete" class=" button is-danger mb-3">
                              <span><strong>Delete</strong></span>
                         </a>
                         <a href="/buyer-reviews" id="" class="button is-info ">
                             <strong>Reviews</strong>
                         </a>
-                    {{!-- </div> --}}
+                    </div>
             </li>
         {{/each}}
     </ul>
