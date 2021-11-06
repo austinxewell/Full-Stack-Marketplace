@@ -2,8 +2,12 @@ const router = require("express").Router();
 const { User, Purchased, Review, Post } = require("../models");
 const withAuth = require("../utils/auth");
 
+router.get("/", (req, res) => {
+  res.render("buyer-reviews");
+});
+
 router.get("/post-review", (req, res) => {
-  res.render("post-review");
+    res.render('post-review');
 });
 
 router.post("/post-review", (req, res) => {
@@ -28,6 +32,7 @@ router.post("/post-review", (req, res) => {
     ],
   })
   .then((dbReviewData) => {
+    res.render('/post-review')
     if (!dbReviewData) {
       res.status(404).json({ message: 'No listing found with this id' });
       return;
