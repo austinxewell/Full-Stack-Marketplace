@@ -1,7 +1,7 @@
 async function viewReviewsFormHandler(event) {
   event.preventDefault();
 
-  const review_text = document.querySelector("#view-review").value.trim();
+  const review_text = document.querySelector("#view-reviews").value.trim();
 
   if (review_text) {
     const response = await fetch("/api/buyer_reviews", {
@@ -50,7 +50,7 @@ async function reviewFormHandler(event) {
 }
 
 document
-  .querySelector("#view-reviews")
+  .querySelector("#view-reviews-form")
   .addEventListener("click", reviewFormHandler);
 
 document
