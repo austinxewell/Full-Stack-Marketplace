@@ -1,8 +1,7 @@
 const Post = require('./Post');
 const User = require('./User');
-const Purchased = require("./Purchased");
 const Review = require("./Review");
-
+const Purchased = require("./Purchased");
 
 
 // create associations
@@ -14,24 +13,20 @@ Post.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
+Purchased.belongsTo(User, {
+  foreignKey: 'buyer_id'
+});
+
 Purchased.belongsTo(Post, {
   foreignKey: 'post_id'
 });
 
-User.hasMany(Purchased, {
-  foreignkey: 'buyers_id'
-})
-
-Purchased.belongsTo(User, {
-  foreignKey: 'user_id'
-});
-
 User.hasMany(Review, {
-  foreignKey: 'user_id'
+  foreignKey: 'buyer_id'
 });
 
 Review.belongsTo(Post, {
-  foreignKey: 'sellers_id'
+  foreignKey: 'post_id'
 });
 
 module.exports = { User, Post, Purchased, Review };

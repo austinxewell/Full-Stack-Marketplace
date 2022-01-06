@@ -60,6 +60,14 @@
     {{#each posts as |post|}}
     <li>
         {{> purchased-items post }}
+            <div class="column is-2">
+                    <a href="/buyer-reviews/post-review" id="" class="button is-info buttonSize">
+                        <span><strong>Leave Review  </strong><i class="fas fa-plus"></i></span>
+                    </a>
+            </div>
+      </div>
+   </div>
+</div>
     </li>
     <br>
     {{/each}}
@@ -79,11 +87,8 @@
                 {{> post-info post }}
                     <div class="column is-2">
                         <button name="delete" class="button is-danger mb-3 buttonSize">
-                             <span><strong>Delete</strong></span>
+                        <span><strong>Delete  </strong><i class="fas fa-trash"></i></span>
                         </button>
-                        <a href="/buyer-reviews" id="" class="button is-info ">
-                            <strong>Reviews</strong>
-                        </a>
                     </div>
             </li>
         {{/each}}
@@ -104,7 +109,7 @@
                     <p>Dummy Data, not in database.</p>
                 </div>
                 <div class="column is-2">
-                    <a id="" class="button is-danger">
+                    <a id="" class="button is-danger buttonSize">
                         <span><strong>Delete  </strong><i class="fas fa-trash"></i></span>
                     </a>
                 </div>
@@ -113,5 +118,6 @@
     </div>
 
 
+<script src="/javascript/delete-post.js"></script>
 <script src="/javascript/logout.js"></script>
 <script src="/javascript/money.js"></script>

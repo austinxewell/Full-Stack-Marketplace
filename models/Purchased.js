@@ -11,6 +11,10 @@ Purchased.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    buyers_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
     post_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -20,16 +24,6 @@ Purchased.init(
         key: "id",
       },
     },
-    buyers_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: "user",
-        key: "id",
-        attributes: ['username'],
-        as: ['buyers_username']
-      }
-    }
   },
   {
     sequelize,

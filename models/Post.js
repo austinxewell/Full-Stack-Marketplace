@@ -12,12 +12,20 @@ Post.init(
          primaryKey: true,
          autoIncrement: true,
       },
+      // seller_id: {
+      //    type: DataTypes.INTEGER,
+      //    allowNull: false,
+      //    references: {
+      //       model: 'user',
+      //       key: 'id'
+      //    }
+      // },
       title: {
          type: DataTypes.STRING,
          allowNull: false,
       },
       price: {
-         type: DataTypes.DECIMAL,
+         type: DataTypes.INTEGER,
          allowNull: false,
       },
       shipping: {
@@ -34,15 +42,12 @@ Post.init(
          type: DataTypes.STRING,
          allowNull: false,
       },
-      sellers_id: {
+      user_id: {
          type: DataTypes.INTEGER,
-         allowNull: false,
          references: {
             model: 'user',
             key: 'id',
-            attributes: ['username'],
-            as: ['sellers_username']
-         }
+         },
       },
    },
    {

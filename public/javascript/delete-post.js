@@ -1,8 +1,11 @@
 async function deleteFormHandler(event) {
    event.preventDefault();
+   console.log('~ event', event);
    console.log('deleteFormHandler is clicked');
 
-   //const id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
+   
+   const id = document.querySelectorAll('.id');
+   console.log('This is:', id);
    const response = await fetch(`/api/post/${id}`, {
       method: 'DELETE',
    });
@@ -14,6 +17,6 @@ async function deleteFormHandler(event) {
    }
 }
 
-document.querySelector('.delete').forEach((button) => {
+document.querySelectorAll('#delete').forEach((button) => {
    button.addEventListener('click', deleteFormHandler);
 });

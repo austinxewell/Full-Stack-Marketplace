@@ -53,7 +53,7 @@ router.post('/', withAuth, (req, res) => {
       shipping: req.body.item_shipping,
       description: req.body.item_description,
       picture_url: req.body.secure_url,
-      sellers_id: req.session.user_id,
+      user_id: req.session.user_id,
       //seller_id: req.session.user_id,
    })
       .then((dbPostData) => {
@@ -72,7 +72,7 @@ router.put('/:id', withAuth, (req, res) => {
          shipping: req.body.shipping,
          description: req.body.description,
          picture_url: req.body.picture_url,
-         sellers_id: req.session.user_id,
+         user_id: req.session.user_id,
       },
       {
          where: {
