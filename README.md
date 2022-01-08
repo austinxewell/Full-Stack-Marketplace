@@ -1,7 +1,9 @@
 # Full Stack Marketplace 
   [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
   # Description
-  This is a full stack project designed to be an ecommerce marketplace. This webpage allows users to buy and sell items via our online marketplace. It will allow you to browse listings and if you find something you like, the ability to log in to purchase. Once logged in you will have access to a multitude of different options. The most important being your dashboard. The dashboard is where you will locate your purchased items, where you will be able to also leave a review for your seller, and your listed items that you are personally selling.
+  This is a full stack project designed to be an ecommerce marketplace. This webpage allows users to buy and sell items via our online marketplace. It will allow you to browse listings and if you find something you like, the ability to log in to purchase. Once logged in you will have access to a multitude of different options. The most important being your dashboard. The dashboard is where you will locate your purchased items, where you will be able to also leave a review for your seller, and your listed items that you are personally selling. Some of the technologies used include Hanldebars, Node.js, Express.js, JawsDB, SQL, Express-FileUpload and Cloudinary
+
+
   # Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)
